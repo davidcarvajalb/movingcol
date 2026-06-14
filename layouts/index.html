@@ -18,7 +18,7 @@
   <!-- Product Grid -->
   <section class="products-section">
     <!-- Sort products by Weight ascending, Date descending -->
-    {{ $productos := (where .Site.RegularPages "Section" "productos").ByWeight }}
+    {{ $productos := (where .Site.RegularPages "Section" "products").ByWeight }}
     
     {{ if eq (len $productos) 0 }}
       <div class="empty-catalog">

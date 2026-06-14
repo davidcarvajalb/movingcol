@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Ensure directories exist
-const contentDir = path.join(__dirname, 'content', 'productos');
+const contentDir = path.join(__dirname, 'content', 'products');
 const tmpDir = path.join(__dirname, 'tmp-uploads');
 fs.mkdirSync(contentDir, { recursive: true });
 fs.mkdirSync(tmpDir, { recursive: true });
@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static admin page
 app.use(express.static(path.join(__dirname, 'views')));
 // Serve product content folder statically for thumbnails
-app.use('/content/productos', express.static(path.join(__dirname, 'content', 'productos')));
+app.use('/content/products', express.static(path.join(__dirname, 'content', 'products')));
 
 // Helper to slugify titles
 function slugify(text) {
@@ -69,7 +69,7 @@ function parseFrontMatter(content) {
 }
 
 // API: Get all products
-app.get('/api/productos', (req, res) => {
+app.get('/api/products', (req, res) => {
   try {
     if (!fs.existsSync(contentDir)) {
       return res.json([]);
@@ -122,7 +122,7 @@ app.get('/api/productos', (req, res) => {
 });
 
 // API: Create new product
-app.post('/api/productos', upload.array('photos', 10), (req, res) => {
+app.post('/api/products', upload.array('photos', 10), (req, res) => {
   try {
     const { title, price, description, category, weight } = req.body;
     if (!title || !price) {
@@ -189,7 +189,7 @@ ${description || ''}
 });
 
 // API: Update product
-app.post('/api/productos/:oldSlug', upload.array('photos', 10), (req, res) => {
+app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
   try {
     const oldSlug = req.params.oldSlug;
     const oldProductDir = path.join(contentDir, oldSlug);
@@ -335,7 +335,7 @@ ${description || ''}
 });
 
 // API: Update product status (sold/available)
-app.post('/api/productos/:slug/status', (req, res) => {
+app.post('/api/products/:slug/status', (req, res) => {
   try {
     const slug = req.params.slug;
     const { sold, buyer, soldPrice } = req.body;
@@ -384,7 +384,7 @@ ${body.trim()}
 });
 
 // API: Reorder all products
-app.post('/api/ordenar-productos', (req, res) => {
+app.post('/api/reorder-products', (req, res) => {
   try {
     const { slugs } = req.body;
     if (!slugs || !Array.isArray(slugs)) {
@@ -438,7 +438,7 @@ ${body.trim()}
 });
 
 // API: Delete product
-app.delete('/api/productos/:slug', (req, res) => {
+app.delete('/api/products/:slug', (req, res) => {
   try {
     const slug = req.params.slug;
     const productDir = path.join(contentDir, slug);
