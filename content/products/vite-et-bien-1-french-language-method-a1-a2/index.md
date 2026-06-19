@@ -7,8 +7,8 @@ categories: ["Book"]
 referenceUrl: ""
 availableFrom: ""
 weight: 37
-sold: false
-onHold: true
+sold: true
+onHold: false
 ---
 Selling "Vite et Bien 1," a fast-paced French learning method for adults (levels A1/A2).
 
