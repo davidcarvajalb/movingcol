@@ -6,8 +6,9 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: ""
 availableFrom: ""
-weight: 25
+weight: 26
 sold: false
+onHold: false
 ---
 A pair of upholstered dining or accent chairs in a vibrant turquoise blue fabric. 
 Please note: There are some minor light stains/shadows on the fabric due to normal use (as shown in the photos), but the chairs are solid, clean, and very comfortable. Priced accordingly.

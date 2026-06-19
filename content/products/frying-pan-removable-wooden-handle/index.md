@@ -6,8 +6,9 @@ draft: false
 categories: ["Kitchen"]
 referenceUrl: "https://lavacanada.ca/products/frying-pans-w-removable-wooden-handle?variant=37564682174636"
 availableFrom: ""
-weight: 34
+weight: 36
 sold: true
+onHold: false
 ---
 Lava enameled cast iron frying pan – 24 cm – Cayenne Red
 Like new. $50 (retails $100).

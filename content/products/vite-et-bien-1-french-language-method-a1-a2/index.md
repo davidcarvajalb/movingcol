@@ -4,10 +4,11 @@ price: 10
 date: 2026-06-15T00:22:15.796Z
 draft: false
 categories: ["Book"]
+weight: 37
 referenceUrl: ""
 availableFrom: ""
-weight: 35
 sold: false
+onHold: true
 ---
 Selling "Vite et Bien 1," a fast-paced French learning method for adults (levels A1/A2).
 

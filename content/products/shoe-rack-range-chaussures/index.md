@@ -6,7 +6,7 @@ draft: false
 categories: ["Storage"]
 referenceUrl: "https://www.canadiantire.ca/fr/pdp/range-chauss-utilitaire-3-niv-vancouver-classics-espresso-4742613p.html?rq=rangement+chaussure"
 availableFrom: ""
-weight: 16
+weight: 17
 sold: false
 onHold: false
 ---

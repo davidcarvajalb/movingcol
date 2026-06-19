@@ -8,5 +8,6 @@ referenceUrl: ""
 availableFrom: ""
 weight: 4
 sold: false
+onHold: false
 ---
 

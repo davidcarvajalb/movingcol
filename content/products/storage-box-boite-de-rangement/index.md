@@ -6,8 +6,9 @@ draft: false
 categories: ["Storage"]
 referenceUrl: "https://www.ikea.com/ca/en/p/sockerbit-storage-box-with-lid-white-40522088/"
 availableFrom: ""
-weight: 28
+weight: 29
 sold: false
+onHold: false
 ---
 SOCKERBIT  Storage box with lid, white, 38x76x30 cm (15x30x11 ¾ ")
 

@@ -6,8 +6,9 @@ draft: false
 categories: ["Furniture", "Storage"]
 referenceUrl: "https://www.jysk.ca/fyn-4-drawer-chest.html"
 availableFrom: ""
-weight: 23
+weight: 24
 sold: false
+onHold: false
 ---
 Measurements	41 x 120.5 x 39.9 cm (16.1 x 47.4 x 15.7")
 Rolls smoothly on wheels so you can reposition for cleaning or move between rooms effortlessly

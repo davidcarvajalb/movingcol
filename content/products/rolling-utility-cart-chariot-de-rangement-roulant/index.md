@@ -6,8 +6,9 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: ""
 availableFrom: ""
-weight: 26
+weight: 27
 sold: false
+onHold: false
 ---
 A versatile and sturdy black 3-tier storage cart on wheels. Perfect for organizing the kitchen, bathroom, craft supplies, or office spaces. 
 

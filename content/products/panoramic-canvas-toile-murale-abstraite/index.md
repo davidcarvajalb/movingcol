@@ -4,9 +4,9 @@ price: 15
 date: 2026-06-15T13:42:45.469Z
 draft: false
 categories: ["Decor"]
-weight: 2
 referenceUrl: ""
 availableFrom: ""
+weight: 34
 sold: false
 onHold: true
 ---

@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/fr/p/styrspel-chaise-de-jeu-rouge-70613058/"
 availableFrom: "2026-08-20"
-weight: 19
+weight: 20
 sold: false
 onHold: false
 ---

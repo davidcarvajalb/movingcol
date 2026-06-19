@@ -8,6 +8,7 @@ referenceUrl: "https://www.ikea.com/ca/en/p/kyrre-stool-birch-60416925/"
 availableFrom: ""
 weight: 7
 sold: false
+onHold: false
 ---
 Seat:
 Plywood, Birch veneer, Tinted lacquer

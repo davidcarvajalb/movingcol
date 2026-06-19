@@ -6,8 +6,9 @@ draft: false
 categories: ["Electronics"]
 referenceUrl: ""
 availableFrom: "2026-08-15"
-weight: 11
+weight: 12
 sold: false
+onHold: false
 ---
 Screen: 21.5-inch Retina 4K display (4096 x 2304 resolution)
 Processor: 3 GHz 6-Core Intel Core i5

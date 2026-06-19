@@ -4,9 +4,9 @@ price: 5
 date: 2026-06-19T17:33:24.862Z
 draft: false
 categories: ["Book"]
-weight: 16
 referenceUrl: ""
 availableFrom: ""
+weight: 10
 sold: false
 onHold: true
 ---

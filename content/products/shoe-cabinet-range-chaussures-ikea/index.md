@@ -6,8 +6,9 @@ draft: false
 categories: ["Furniture", "Storage"]
 referenceUrl: "https://www.ikea.com/ca/en/p/brusali-shoe-cabinet-with-3-compartments-white-80480393/"
 availableFrom: ""
-weight: 24
+weight: 25
 sold: false
+onHold: false
 ---
 Shoe cabinets with 3 compartments, white, 61x30x130 cm (24x11 3/4x51 1/8 ")
 

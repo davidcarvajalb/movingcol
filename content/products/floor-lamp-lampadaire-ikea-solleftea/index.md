@@ -4,9 +4,9 @@ price: 30
 date: 2026-06-15T14:02:10.640Z
 draft: false
 categories: ["Lighting"]
-weight: 31
 referenceUrl: ""
 availableFrom: ""
+weight: 32
 sold: false
 onHold: true
 ---

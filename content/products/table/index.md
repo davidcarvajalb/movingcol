@@ -6,8 +6,9 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.jysk.ca/jegind-dining-table.html"
 availableFrom: ""
-weight: 18
+weight: 19
 sold: false
+onHold: false
 ---
 White round dining table. Base material: Rubberwood. Tabletop material: Medium-density fiberboard (MDF). 
 Measurements: 105 x 75 x 105 cm (41.3 x 29.5 x 41.3"). Height from floor to lowest point of tabletop: 67 cm (26.3"). 
