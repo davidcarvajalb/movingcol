@@ -8,7 +8,7 @@ referenceUrl: ""
 availableFrom: ""
 weight: 34
 sold: false
-onHold: true
+onHold: false
 ---
 HP Envy 4520 All-in-One Printer
 Features: Wireless (Wi-Fi), Print, Scan, Copy, Web, Photo
