@@ -1,6 +1,6 @@
 ---
 title: "Shoe Rack / Range chaussures "
-price: 35
+price: 25
 date: 2026-06-16T17:22:14.425Z
 draft: false
 categories: ["Storage"]
@@ -8,6 +8,7 @@ referenceUrl: "https://www.canadiantire.ca/fr/pdp/range-chauss-utilitaire-3-niv-
 availableFrom: ""
 weight: 16
 sold: false
+onHold: false
 ---
 Resin slat shelves hold up to 30 lbs. each. Iron frame construction for extra strength and versatility. Dimensions: 26.5" W x 12.2" D x 19.1" H
 *********************************************

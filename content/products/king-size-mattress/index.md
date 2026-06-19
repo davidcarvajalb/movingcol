@@ -1,6 +1,6 @@
 ---
 title: "King Size Mattress"
-price: 700
+price: 600
 date: 2026-06-18T13:47:32.391Z
 draft: false
 categories: ["Furniture"]
