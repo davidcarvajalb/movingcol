@@ -5,7 +5,8 @@ date: 2026-06-15T15:41:05.958Z
 draft: false
 categories: ["Home appliances"]
 referenceUrl: ""
-weight: 100
+availableFrom: ""
+weight: 29
 sold: false
 ---
 A reliable and quiet Honeywell evaporative humidifier featuring an invisible cool mist technology. It has an easy-to-fill removable water tank with a sturdy handle and multi-speed fan controls. Perfect for medium-sized bedrooms or living spaces to maintain healthy humidity levels.

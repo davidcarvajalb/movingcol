@@ -72,6 +72,14 @@
         {{ site.Params.currencySymbol }}{{ .Params.price }}
       </div>
 
+      {{ with .Params.availableFrom }}
+        {{ $availableFrom := time . }}
+        <div class="availability-banner">
+          <span>Available from</span>
+          <strong>{{ $availableFrom | time.Format "January 2, 2006" }}</strong>
+        </div>
+      {{ end }}
+
       <div class="detail-description-content">
         <h3>Item Details</h3>
         <div class="markdown-body">

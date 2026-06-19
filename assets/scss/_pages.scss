@@ -371,7 +371,36 @@
     font-size: 2rem;
     font-weight: 800;
     color: #818cf8;
+    margin-bottom: 1.25rem;
+  }
+
+  .availability-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
     margin-bottom: 2rem;
+    padding: 0.85rem 1rem;
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.35);
+    border-radius: 0.5rem;
+    color: #fde68a;
+
+    span {
+      color: #fcd34d;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: right;
+    }
   }
 
   .detail-description-content {

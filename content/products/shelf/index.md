@@ -5,16 +5,19 @@ date: 2026-06-14T10:59:27.698Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.jysk.ca/fr/caja-tall-cabinet-white.html"
+availableFrom: ""
 weight: 100
 sold: false
 ---
-EN * CAJA Linen Tower Cabinet
+EN * 
+CAJA Linen Tower Cabinet
 Measurements: L 35 x W 26 x H 173 cm (13.8" x 10.2" x 68.1") • Made from MDF 
 Selling due to moving.
 
 A tall, narrow freestanding cabinet featuring three open upper shelves and a bottom cupboard with a light oak-finished louvered (shutter) door. Perfect for tight spaces, bathrooms, or living rooms
-
-FR * CAJA Armoire haute pour lingerie
+*******************************************
+FR *
+CAJA Armoire haute pour lingerie
 Dimensions : L 35 x l 26 x H 173 cm (13.8" x 10.2" x 68.1")
 Matériau : Fabriqué en MDF.
 À vendre pour cause de déménagement.

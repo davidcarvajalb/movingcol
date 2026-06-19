@@ -5,7 +5,8 @@ date: 2026-06-15T17:23:42.647Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: ""
-weight: 100
+availableFrom: ""
+weight: 25
 sold: false
 ---
 A pair of upholstered dining or accent chairs in a vibrant turquoise blue fabric. 

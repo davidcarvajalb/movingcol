@@ -5,7 +5,8 @@ date: 2026-06-15T18:06:46.516Z
 draft: false
 categories: ["Furniture", "Storage"]
 referenceUrl: "https://www.jysk.ca/fyn-4-drawer-chest.html"
-weight: 100
+availableFrom: ""
+weight: 23
 sold: false
 ---
 Measurements	41 x 120.5 x 39.9 cm (16.1 x 47.4 x 15.7")

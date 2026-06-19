@@ -5,7 +5,8 @@ date: 2026-06-16T00:07:20.910Z
 draft: false
 categories: ["Electronics"]
 referenceUrl: ""
-weight: 100
+availableFrom: ""
+weight: 21
 sold: false
 ---
 HP Envy 4520 All-in-One Printer

@@ -106,6 +106,7 @@
     .form-group input[type="text"],
     .form-group input[type="url"],
     .form-group input[type="number"],
+    .form-group input[type="date"],
     .form-group textarea {
       width: 100%;
       background-color: #0f172a;
@@ -299,6 +300,13 @@
       color: #818cf8;
       font-weight: 600;
       font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-info .availability {
+      color: #fbbf24;
+      font-size: 0.85rem;
+      font-weight: 600;
       margin-bottom: 0.25rem;
     }
 
@@ -646,6 +654,11 @@
           </div>
 
           <div class="form-group">
+            <label for="available-from">Available from</label>
+            <input type="date" id="available-from" name="availableFrom">
+          </div>
+
+          <div class="form-group">
             <label for="description">Description (Product details)</label>
             <textarea id="description" name="description" rows="5" placeholder="Specifications, condition, key details..."></textarea>
           </div>
@@ -779,6 +792,19 @@
       categoryTagify.settings.whitelist = categories;
     }
 
+    function formatDisplayDate(dateString) {
+      if (!dateString) return '';
+
+      const date = new Date(`${dateString}T00:00:00`);
+      if (Number.isNaN(date.getTime())) return '';
+
+      return new Intl.DateTimeFormat('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+      }).format(date);
+    }
+
     initCategoryTags();
 
     // Trigger file select
@@ -887,6 +913,7 @@
             <div class="product-info">
               <h3>${p.title}${isSold ? ' <span style="color: #64748b; font-size: 0.8rem; font-weight: 700;">[SOLD]</span>' : ''}</h3>
               <p class="price">$${p.price.toFixed(2)}</p>
+              ${p.availableFrom ? `<p class="availability">Available from ${formatDisplayDate(p.availableFrom)}</p>` : ''}
               <p class="desc">${p.category ? `[${p.category}] ` : ''}${p.description || 'No description'}</p>
               ${p.referenceUrl ? '<p class="desc">Reference link saved</p>' : ''}
             </div>
@@ -1022,6 +1049,7 @@
       document.getElementById('price').value = product.price;
       document.getElementById('description').value = product.description || '';
       document.getElementById('reference-url').value = product.referenceUrl || '';
+      document.getElementById('available-from').value = product.availableFrom || '';
       setCategoryTags(product.categories || product.category || '');
       weightInput.value = product.weight || 100;
 
@@ -1208,6 +1236,7 @@
       const price = document.getElementById('price').value;
       const description = document.getElementById('description').value;
       const referenceUrl = document.getElementById('reference-url').value;
+      const availableFrom = document.getElementById('available-from').value;
       const category = getCategoryValue();
       const weight = weightInput.value;
 
@@ -1226,6 +1255,7 @@
       formData.append('price', price);
       formData.append('description', description);
       formData.append('referenceUrl', referenceUrl);
+      formData.append('availableFrom', availableFrom);
       formData.append('category', category);
       formData.append('weight', weight);
       

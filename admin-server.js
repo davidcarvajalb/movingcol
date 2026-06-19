@@ -60,12 +60,33 @@ function parseFrontMatter(content) {
     if (parts.length >= 2) {
       const key = parts[0].trim();
       const val = parts.slice(1).join(':').trim();
-      // Remove quotes if present
-      attributes[key] = val.replace(/^["']|["']$/g, '');
+      attributes[key] = parseYamlScalar(val);
     }
   });
 
   return { attributes, body };
+}
+
+function parseYamlScalar(value) {
+  const trimmed = (value || '').trim();
+
+  if (trimmed.startsWith('"') && trimmed.endsWith('"')) {
+    try {
+      return JSON.parse(trimmed);
+    } catch (error) {
+      return trimmed.slice(1, -1);
+    }
+  }
+
+  if (trimmed.startsWith("'") && trimmed.endsWith("'")) {
+    return trimmed.slice(1, -1).replace(/''/g, "'");
+  }
+
+  return trimmed;
+}
+
+function formatYamlString(value) {
+  return JSON.stringify(String(value || '').replace(/\\"/g, '"'));
 }
 
 function normalizeReferenceUrl(url) {
@@ -82,6 +103,13 @@ function normalizeReferenceUrl(url) {
   }
 
   return '';
+}
+
+function normalizeAvailableFrom(date) {
+  const value = (date || '').trim();
+  if (!value) return '';
+
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : '';
 }
 
 function parseCategories(value) {
@@ -111,7 +139,7 @@ function parseCategories(value) {
 
 function formatCategories(value) {
   const categories = [...new Set(parseCategories(value))];
-  const quoted = categories.map(item => `"${item.replace(/"/g, '\\"')}"`);
+  const quoted = categories.map(formatYamlString);
   return `[${quoted.join(', ')}]`;
 }
 
@@ -148,6 +176,7 @@ app.get('/api/products', (req, res) => {
             category: categories.join(', '),
             categories: categories,
             referenceUrl: attributes.referenceUrl || '',
+            availableFrom: normalizeAvailableFrom(attributes.availableFrom),
             weight: parseInt(attributes.weight) || 100,
             images: images,
             sold: attributes.sold === 'true' || attributes.sold === true
@@ -168,7 +197,7 @@ app.get('/api/products', (req, res) => {
 // API: Create new product
 app.post('/api/products', upload.array('photos', 10), (req, res) => {
   try {
-    const { title, price, description, category, referenceUrl, weight } = req.body;
+    const { title, price, description, category, referenceUrl, availableFrom, weight } = req.body;
     if (!title || !price) {
       return res.status(400).json({ error: 'Title and price are required.' });
     }
@@ -210,13 +239,15 @@ app.post('/api/products', upload.array('photos', 10), (req, res) => {
     const weightNum = parseInt(weight) || 100;
     const catStr = formatCategories(category);
     const refUrl = normalizeReferenceUrl(referenceUrl);
+    const availableFromDate = normalizeAvailableFrom(availableFrom);
     const markdownContent = `---
-title: "${title.replace(/"/g, '\\"')}"
+title: ${formatYamlString(title)}
 price: ${parseFloat(price)}
 date: ${dateStr}
 draft: false
 categories: ${catStr}
-referenceUrl: "${refUrl.replace(/"/g, '\\"')}"
+referenceUrl: ${formatYamlString(refUrl)}
+availableFrom: ${formatYamlString(availableFromDate)}
 weight: ${weightNum}
 sold: false
 ---
@@ -242,7 +273,7 @@ app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
       return res.status(404).json({ error: 'Product does not exist.' });
     }
 
-    const { title, price, description, category, referenceUrl, weight, deletePhotos, photoOrder } = req.body;
+    const { title, price, description, category, referenceUrl, availableFrom, weight, deletePhotos, photoOrder } = req.body;
     if (!title || !price) {
       return res.status(400).json({ error: 'Title and price are required.' });
     }
@@ -355,13 +386,15 @@ app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
     const weightNum = parseInt(weight) || 100;
     const catStr = formatCategories(category);
     const refUrl = normalizeReferenceUrl(referenceUrl);
+    const availableFromDate = normalizeAvailableFrom(availableFrom);
     const markdownContent = `---
-title: "${title.replace(/"/g, '\\"')}"
+title: ${formatYamlString(title)}
 price: ${parseFloat(price)}
 date: ${dateStr}
 draft: false
 categories: ${catStr}
-referenceUrl: "${refUrl.replace(/"/g, '\\"')}"
+referenceUrl: ${formatYamlString(refUrl)}
+availableFrom: ${formatYamlString(availableFromDate)}
 weight: ${weightNum}
 sold: ${originalSold}
 ---
@@ -396,16 +429,18 @@ app.post('/api/products/:slug/status', (req, res) => {
     const soldStatus = sold === true || sold === 'true';
 
     const categoriesStr = formatCategories(attributes.categories);
+    const availableFrom = normalizeAvailableFrom(attributes.availableFrom);
 
     // Write updated Markdown
     const markdownContent = `---
-title: "${(attributes.title || slug).replace(/"/g, '\\"')}"
+title: ${formatYamlString(attributes.title || slug)}
 price: ${parseFloat(attributes.price) || 0}
 date: ${attributes.date || new Date().toISOString()}
 draft: false
 categories: ${categoriesStr}
 weight: ${parseInt(attributes.weight) || 100}
-referenceUrl: "${normalizeReferenceUrl(attributes.referenceUrl).replace(/"/g, '\\"')}"
+referenceUrl: ${formatYamlString(normalizeReferenceUrl(attributes.referenceUrl))}
+availableFrom: ${formatYamlString(availableFrom)}
 sold: ${soldStatus}
 ---
 ${body.trim()}
@@ -439,18 +474,20 @@ app.post('/api/reorder-products', (req, res) => {
         const priceVal = parseFloat(attributes.price) || 0;
         const dateVal = attributes.date || new Date().toISOString();
         const referenceUrlVal = normalizeReferenceUrl(attributes.referenceUrl);
+        const availableFromVal = normalizeAvailableFrom(attributes.availableFrom);
         
         const category = formatCategories(attributes.categories);
         
         const soldVal = attributes.sold === 'true' || attributes.sold === true;
         
         const markdownContent = `---
-title: "${titleVal.replace(/"/g, '\\"')}"
+title: ${formatYamlString(titleVal)}
 price: ${priceVal}
 date: ${dateVal}
 draft: false
 categories: ${category}
-referenceUrl: "${referenceUrlVal.replace(/"/g, '\\"')}"
+referenceUrl: ${formatYamlString(referenceUrlVal)}
+availableFrom: ${formatYamlString(availableFromVal)}
 weight: ${weightNum}
 sold: ${soldVal}
 ---
