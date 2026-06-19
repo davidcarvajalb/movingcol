@@ -8,6 +8,7 @@ referenceUrl: "https://www.costco.ca/p/-/kirkland-signature-by-stearns-foster-la
 availableFrom: "2026-08-20"
 weight: 10
 sold: false
+onHold: false
 ---
 Kirkland Signature by Stearns & Foster Lakeridge Luxury Cushion Firm Pillowtop Mattress
 King mattress: 201.93 cm x 193.04 cm x 36.83 cm (79.5 in. x 76 in. x 14.5 in.)

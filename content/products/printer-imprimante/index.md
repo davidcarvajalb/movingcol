@@ -4,10 +4,11 @@ price: 15
 date: 2026-06-16T00:07:20.910Z
 draft: false
 categories: ["Electronics"]
+weight: 21
 referenceUrl: ""
 availableFrom: ""
-weight: 21
 sold: false
+onHold: true
 ---
 HP Envy 4520 All-in-One Printer
 Features: Wireless (Wi-Fi), Print, Scan, Copy, Web, Photo
