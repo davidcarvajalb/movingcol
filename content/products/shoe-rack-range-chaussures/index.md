@@ -1,6 +1,6 @@
 ---
 title: "Shoe Rack / Range chaussures "
-price: 25
+price: 35
 date: 2026-06-16T17:22:14.425Z
 draft: false
 categories: ["Storage"]
