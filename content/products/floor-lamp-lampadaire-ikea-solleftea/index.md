@@ -4,10 +4,11 @@ price: 30
 date: 2026-06-15T14:02:10.640Z
 draft: false
 categories: ["Lighting"]
+weight: 31
 referenceUrl: ""
 availableFrom: ""
-weight: 31
 sold: false
+onHold: true
 ---
 A stylish Scandinavian-style floor lamp featuring curved light-wood tripod legs and a white geometric cutout shade that creates beautiful ambient lighting patterns. Features a convenient foot-switch cord.
 *******************************************

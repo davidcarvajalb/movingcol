@@ -4,10 +4,11 @@ price: 30
 date: 2026-06-18T13:50:24.040Z
 draft: false
 categories: ["Electronics"]
+weight: 9
 referenceUrl: ""
 availableFrom: ""
-weight: 9
 sold: false
+onHold: true
 ---
 Selling an Amazon Echo Dot (4th Generation) smart speaker with Alexa. Comes with its original box and power adapter. Perfect for listening to music, controlling smart home devices, setting alarms, and more.
 *******************************************

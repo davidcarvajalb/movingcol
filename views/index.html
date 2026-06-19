@@ -553,27 +553,25 @@
       filter: grayscale(0.8);
     }
 
-    .sold-toggle-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 0.375rem;
-      transition: color 0.2s, background-color 0.2s;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .product-item.hold-status {
+      background-color: rgba(245, 158, 11, 0.08);
+      border-color: rgba(245, 158, 11, 0.35);
+      opacity: 0.65;
+      filter: grayscale(0.5);
     }
 
-    .sold-toggle-btn:hover {
-      background-color: rgba(255, 255, 255, 0.05);
+    .status-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-left: 0.35rem;
     }
 
-    .sold-toggle-btn svg {
-      width: 20px;
-      height: 20px;
+    .status-label.sold {
+      color: #64748b;
+    }
+
+    .status-label.on-hold {
+      color: #f59e0b;
     }
 
     /* Modal Overlay Styles */
@@ -691,6 +689,9 @@
             <button type="button" class="btn" id="status-btn" style="display: none; background-color: var(--danger); flex: 1; min-width: 120px;">
               Mark as Sold
             </button>
+            <button type="button" class="btn" id="hold-status-btn" style="display: none; background-color: #f59e0b; color: #111827; flex: 1; min-width: 120px;">
+              Mark On Hold
+            </button>
             <button type="button" class="btn" id="cancel-btn" style="display: none; background-color: var(--text-muted); flex: 1; min-width: 120px;">
               Cancel
             </button>
@@ -729,6 +730,7 @@
     const formTitle = document.getElementById('form-title');
     const cancelBtn = document.getElementById('cancel-btn');
     const statusBtn = document.getElementById('status-btn');
+    const holdStatusBtn = document.getElementById('hold-status-btn');
     const existingPhotosGroup = document.getElementById('existing-photos-group');
     const existingPhotosContainer = document.getElementById('existing-photos-container');
     const categoryInput = document.getElementById('category');
@@ -900,10 +902,13 @@
             : 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23475569"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4.44-6.19l-2.6 3.12-1.9-2.28L6 17h12l-4.44-4.19z"/></svg>';
 
           const isSold = p.sold === true;
+          const isOnHold = p.onHold === true;
           const productItem = document.createElement('div');
           productItem.classList.add('product-item');
           if (isSold) {
             productItem.classList.add('sold-status');
+          } else if (isOnHold) {
+            productItem.classList.add('hold-status');
           }
           productItem.setAttribute('draggable', 'true');
           productItem.setAttribute('data-slug', p.slug);
@@ -911,7 +916,7 @@
           productItem.innerHTML = `
             <img class="product-thumb" src="${thumbnailSrc}" alt="${p.title}">
             <div class="product-info">
-              <h3>${p.title}${isSold ? ' <span style="color: #64748b; font-size: 0.8rem; font-weight: 700;">[SOLD]</span>' : ''}</h3>
+              <h3>${p.title}${isSold ? ' <span class="status-label sold">[SOLD]</span>' : ''}${isOnHold ? ' <span class="status-label on-hold">[ON HOLD]</span>' : ''}</h3>
               <p class="price">$${p.price.toFixed(2)}</p>
               ${p.availableFrom ? `<p class="availability">Available from ${formatDisplayDate(p.availableFrom)}</p>` : ''}
               <p class="desc">${p.category ? `[${p.category}] ` : ''}${p.description || 'No description'}</p>
@@ -1084,16 +1089,31 @@
       btnText.textContent = 'Update Product';
       cancelBtn.style.display = 'inline-block';
 
-      // Set up status button in edit form
+      // Set up status buttons in edit form
       statusBtn.style.display = 'inline-block';
+      holdStatusBtn.style.display = 'inline-block';
       if (product.sold) {
         statusBtn.textContent = 'Mark Available';
         statusBtn.style.backgroundColor = 'var(--success, #10b981)';
-        statusBtn.onclick = () => toggleProductStatus(slug, false);
+        statusBtn.style.color = '#ffffff';
+        statusBtn.onclick = () => setProductStatus(slug, 'available');
       } else {
         statusBtn.textContent = 'Mark as Sold';
         statusBtn.style.backgroundColor = 'var(--danger, #ef4444)';
-        statusBtn.onclick = () => toggleProductStatus(slug, true);
+        statusBtn.style.color = '#ffffff';
+        statusBtn.onclick = () => setProductStatus(slug, 'sold');
+      }
+
+      if (product.onHold) {
+        holdStatusBtn.textContent = 'Mark Available';
+        holdStatusBtn.style.backgroundColor = 'var(--success, #10b981)';
+        holdStatusBtn.style.color = '#ffffff';
+        holdStatusBtn.onclick = () => setProductStatus(slug, 'available');
+      } else {
+        holdStatusBtn.textContent = 'Mark On Hold';
+        holdStatusBtn.style.backgroundColor = '#f59e0b';
+        holdStatusBtn.style.color = '#111827';
+        holdStatusBtn.onclick = () => setProductStatus(slug, 'onHold');
       }
 
       // Scroll to form card
@@ -1193,6 +1213,8 @@
       cancelBtn.style.display = 'none';
       statusBtn.style.display = 'none';
       statusBtn.onclick = null;
+      holdStatusBtn.style.display = 'none';
+      holdStatusBtn.onclick = null;
       formTitle.textContent = 'Add New Product';
       btnText.textContent = 'Save Product';
     }
@@ -1301,11 +1323,14 @@
       }
     });
 
-    window.toggleProductStatus = async function(slug, isSold) {
-      if (isSold === true) {
+    window.setProductStatus = async function(slug, status) {
+      if (status === 'sold') {
         if (!confirm('Are you sure you want to mark this item as sold?')) return;
       }
-      if (isSold === false) {
+      if (status === 'onHold') {
+        if (!confirm('Are you sure you want to mark this item as on hold?')) return;
+      }
+      if (status === 'available') {
         if (!confirm('Are you sure you want to mark this item as available again?')) return;
       }
       
@@ -1313,13 +1338,18 @@
         const response = await fetch(`/api/products/${slug}/status`, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ sold: isSold })
+              'Content-Type': 'application/json'
+            },
+          body: JSON.stringify({ status })
         });
         const result = await response.json();
         if (result.success) {
-          showToast(isSold ? 'Product marked as sold!' : 'Product is now available!');
+          const statusMessage = status === 'sold'
+            ? 'Product marked as sold!'
+            : status === 'onHold'
+              ? 'Product marked as on hold!'
+              : 'Product is now available!';
+          showToast(statusMessage);
           await loadProducts();
           if (editMode && editSlug === slug) {
             startEdit(slug);

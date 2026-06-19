@@ -94,10 +94,15 @@
       {{ end }}
 
       <!-- Action Box -->
-      {{ if .Params.sold }}
-        <div class="sold-action-card">
-          <h3>Sold</h3>
-          <p>This item has already been sold.</p>
+      {{ if or .Params.sold .Params.onHold }}
+        <div class="sold-action-card {{ if .Params.onHold }}on-hold-action-card{{ end }}">
+          {{ if .Params.sold }}
+            <h3>Sold</h3>
+            <p>This item has already been sold.</p>
+          {{ else }}
+            <h3>On Hold</h3>
+            <p>This item is currently on hold.</p>
+          {{ end }}
           
           <button id="copy-link-btn" class="copy-link-btn" data-link="{{ .Permalink }}" style="margin-top: 1.5rem;">
             <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -110,6 +115,10 @@
       {{ else }}
         <div class="purchase-action-card">
           <p>Are you interested in this item or have any questions?</p>
+          <p class="pickup-location">
+            <span>Pickup location</span>
+            <strong>Saint-Laurent, H4M 0A5</strong>
+          </p>
           
           {{ $waNumber := os.Getenv "HUGO_WHATSAPP_NUMBER" }}
           {{ $priceStr := printf "%s%v" site.Params.currencySymbol .Params.price }}

@@ -112,6 +112,10 @@ function normalizeAvailableFrom(date) {
   return /^\d{4}-\d{2}-\d{2}$/.test(value) ? value : '';
 }
 
+function parseBoolean(value) {
+  return value === true || value === 'true';
+}
+
 function parseCategories(value) {
   if (Array.isArray(value)) {
     return value.map(String).map(item => item.trim()).filter(Boolean);
@@ -179,7 +183,8 @@ app.get('/api/products', (req, res) => {
             availableFrom: normalizeAvailableFrom(attributes.availableFrom),
             weight: parseInt(attributes.weight) || 100,
             images: images,
-            sold: attributes.sold === 'true' || attributes.sold === true
+            sold: parseBoolean(attributes.sold),
+            onHold: parseBoolean(attributes.onHold)
           });
         }
       }
@@ -250,6 +255,7 @@ referenceUrl: ${formatYamlString(refUrl)}
 availableFrom: ${formatYamlString(availableFromDate)}
 weight: ${weightNum}
 sold: false
+onHold: false
 ---
 ${description || ''}
 `;
@@ -369,9 +375,10 @@ app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
       });
     }
 
-    // 5. Read original creation date and sold status if possible
+    // 5. Read original creation date and status if possible
     let dateStr = new Date().toISOString();
     let originalSold = false;
+    let originalOnHold = false;
     const mdPath = path.join(productDir, 'index.md');
     if (fs.existsSync(mdPath)) {
       const originalContent = fs.readFileSync(mdPath, 'utf-8');
@@ -379,7 +386,8 @@ app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
       if (attributes.date) {
         dateStr = attributes.date;
       }
-      originalSold = attributes.sold === 'true' || attributes.sold === true;
+      originalSold = parseBoolean(attributes.sold);
+      originalOnHold = parseBoolean(attributes.onHold);
     }
 
     // 6. Write updated Markdown
@@ -397,6 +405,7 @@ referenceUrl: ${formatYamlString(refUrl)}
 availableFrom: ${formatYamlString(availableFromDate)}
 weight: ${weightNum}
 sold: ${originalSold}
+onHold: ${originalOnHold}
 ---
 ${description || ''}
 `;
@@ -410,11 +419,11 @@ ${description || ''}
   }
 });
 
-// API: Update product status (sold/available)
+// API: Update product status (available/sold/on hold)
 app.post('/api/products/:slug/status', (req, res) => {
   try {
     const slug = req.params.slug;
-    const { sold } = req.body;
+    const { status, sold, onHold } = req.body;
     const productDir = path.join(contentDir, slug);
     const mdPath = path.join(productDir, 'index.md');
 
@@ -425,8 +434,27 @@ app.post('/api/products/:slug/status', (req, res) => {
     const content = fs.readFileSync(mdPath, 'utf-8');
     const { attributes, body } = parseFrontMatter(content);
 
-    // Update attributes
-    const soldStatus = sold === true || sold === 'true';
+    let soldStatus = parseBoolean(attributes.sold);
+    let onHoldStatus = parseBoolean(attributes.onHold);
+
+    if (status === 'sold') {
+      soldStatus = true;
+      onHoldStatus = false;
+    } else if (status === 'onHold') {
+      soldStatus = false;
+      onHoldStatus = true;
+    } else if (status === 'available') {
+      soldStatus = false;
+      onHoldStatus = false;
+    } else if (sold !== undefined) {
+      soldStatus = parseBoolean(sold);
+      onHoldStatus = false;
+    } else if (onHold !== undefined) {
+      onHoldStatus = parseBoolean(onHold);
+      if (onHoldStatus) {
+        soldStatus = false;
+      }
+    }
 
     const categoriesStr = formatCategories(attributes.categories);
     const availableFrom = normalizeAvailableFrom(attributes.availableFrom);
@@ -442,12 +470,13 @@ weight: ${parseInt(attributes.weight) || 100}
 referenceUrl: ${formatYamlString(normalizeReferenceUrl(attributes.referenceUrl))}
 availableFrom: ${formatYamlString(availableFrom)}
 sold: ${soldStatus}
+onHold: ${onHoldStatus}
 ---
 ${body.trim()}
 `;
 
     fs.writeFileSync(mdPath, markdownContent, 'utf-8');
-    res.json({ success: true, sold: soldStatus });
+    res.json({ success: true, sold: soldStatus, onHold: onHoldStatus });
   } catch (error) {
     console.error('Error updating status:', error);
     res.status(500).json({ error: 'Error updating product status' });
@@ -478,7 +507,8 @@ app.post('/api/reorder-products', (req, res) => {
         
         const category = formatCategories(attributes.categories);
         
-        const soldVal = attributes.sold === 'true' || attributes.sold === true;
+        const soldVal = parseBoolean(attributes.sold);
+        const onHoldVal = parseBoolean(attributes.onHold);
         
         const markdownContent = `---
 title: ${formatYamlString(titleVal)}
@@ -490,6 +520,7 @@ referenceUrl: ${formatYamlString(referenceUrlVal)}
 availableFrom: ${formatYamlString(availableFromVal)}
 weight: ${weightNum}
 sold: ${soldVal}
+onHold: ${onHoldVal}
 ---
 ${body.trim()}
 `;

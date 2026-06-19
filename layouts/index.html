@@ -64,11 +64,13 @@
             {{ $catStr = delimit . "||" }}
           {{ end }}
           
-          <article class="product-card {{ if .Params.sold }}sold{{ end }}" data-title="{{ .Title | lower }}" data-desc="{{ .Plain | lower }}" data-category="{{ $catStr | lower }}">
+          <article class="product-card {{ if .Params.sold }}sold{{ else if .Params.onHold }}on-hold{{ end }}" data-title="{{ .Title | lower }}" data-desc="{{ .Plain | lower }}" data-category="{{ $catStr | lower }}">
             <a href="{{ .RelPermalink }}" class="product-card-link">
               <div class="product-card-image-wrapper">
                 {{ if .Params.sold }}
                   <span class="sold-badge">Sold</span>
+                {{ else if .Params.onHold }}
+                  <span class="status-badge on-hold-badge">On Hold</span>
                 {{ end }}
                 {{ if gt (len $images) 0 }}
                   {{ $firstImage := index $images 0 }}
