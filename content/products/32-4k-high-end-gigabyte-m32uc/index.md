@@ -6,7 +6,7 @@ draft: false
 categories: ["Electronics"]
 referenceUrl: "https://www.newegg.ca/gigabyte-m32u-arm-edition-32-uhd-144hz-120hz-for-console-game-ss-ips/p/N82E16824012056"
 availableFrom: "2026-08-15"
-weight: 13
+weight: 10
 sold: false
 onHold: false
 ---

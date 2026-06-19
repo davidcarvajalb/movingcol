@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture", "Electronics"]
 referenceUrl: "https://www.primecables.ca/p-362358-cab-m02-23r-bk-sit-stand-dual-motor-height-adjustable-adr-desk-frame-electric-black-primecables#sku549527"
 availableFrom: "2026-08-20"
-weight: 14
+weight: 11
 sold: false
 onHold: false
 ---

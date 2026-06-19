@@ -6,7 +6,7 @@ draft: false
 categories: ["garden"]
 referenceUrl: ""
 availableFrom: ""
-weight: 1
+weight: 7
 sold: false
 onHold: false
 ---

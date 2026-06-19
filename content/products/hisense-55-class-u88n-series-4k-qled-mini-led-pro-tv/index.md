@@ -6,7 +6,7 @@ draft: false
 categories: ["Electronics"]
 referenceUrl: "https://www.costco.ca/p/-/hisense-55-class-u88n-series-4k-qled-mini-led-pro-tv/4000271777?langId=-24&province=QC&sh=true&nf=true"
 availableFrom: "2026-08-20"
-weight: 16
+weight: 13
 sold: false
 onHold: false
 ---

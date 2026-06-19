@@ -6,7 +6,7 @@ draft: false
 categories: ["Electronics"]
 referenceUrl: ""
 availableFrom: "2026-08-15"
-weight: 12
+weight: 9
 sold: false
 onHold: false
 ---

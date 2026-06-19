@@ -6,7 +6,7 @@ draft: false
 categories: ["Lighting"]
 referenceUrl: ""
 availableFrom: ""
-weight: 33
+weight: 28
 sold: false
 onHold: false
 ---

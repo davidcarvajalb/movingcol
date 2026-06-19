@@ -6,7 +6,7 @@ draft: false
 categories: ["Book"]
 referenceUrl: ""
 availableFrom: ""
-weight: 10
+weight: 33
 sold: false
 onHold: true
 ---

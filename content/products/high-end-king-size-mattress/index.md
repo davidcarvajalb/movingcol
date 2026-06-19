@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.costco.ca/p/-/kirkland-signature-by-stearns-foster-lakeridge-luxury-cushion-firm-pillowtop-mattress/4101000160?adobe_mc=TS%3D1781788987%7CMCMID%3D58222761001629601375751792479289910566%7CMCORGID%3D97B21CFE5329614E0A490D45@AdobeOrg&mboxSession=90d9ef82-5672-4538-b960-33b37270d5b5&langId=-24&sh=true&nf=true"
 availableFrom: "2026-08-20"
-weight: 11
+weight: 8
 sold: false
 onHold: false
 ---

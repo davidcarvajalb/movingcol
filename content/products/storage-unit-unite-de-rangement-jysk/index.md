@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture", "Storage"]
 referenceUrl: "https://www.jysk.ca/fyn-4-drawer-chest.html"
 availableFrom: ""
-weight: 24
+weight: 20
 sold: false
 onHold: false
 ---

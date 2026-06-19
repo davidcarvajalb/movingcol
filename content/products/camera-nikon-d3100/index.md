@@ -6,7 +6,7 @@ draft: false
 categories: ["Electronics"]
 referenceUrl: ""
 availableFrom: ""
-weight: 28
+weight: 12
 sold: false
 onHold: false
 ---

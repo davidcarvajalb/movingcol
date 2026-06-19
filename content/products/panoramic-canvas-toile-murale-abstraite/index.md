@@ -6,7 +6,7 @@ draft: false
 categories: ["Decor"]
 referenceUrl: ""
 availableFrom: ""
-weight: 34
+weight: 36
 sold: false
 onHold: true
 ---
