@@ -4,10 +4,10 @@ price: 2
 date: 2026-06-16T01:11:21.203Z
 draft: false
 categories: ["Kitchen"]
+weight: 18
 referenceUrl: "https://www.ikea.com/ca/en/p/foeljsam-oven-dish-clear-glass-50311269/"
 availableFrom: ""
-weight: 18
-sold: false
+sold: true
 onHold: false
 ---
 Oven dish in clear glass that is deep enough for a yummy lasagna and big enough for a load of frozen meatballs. Prepare or heat the food in the oven – and put the dish directly on the table.

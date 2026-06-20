@@ -4,10 +4,10 @@ price: 5
 date: 2026-06-18T15:43:14.282Z
 draft: false
 categories: ["Decor"]
+weight: 3
 referenceUrl: ""
 availableFrom: ""
-weight: 3
-sold: false
+sold: true
 onHold: false
 ---
 
