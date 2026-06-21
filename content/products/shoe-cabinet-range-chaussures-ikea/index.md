@@ -5,7 +5,7 @@ date: 2026-06-15T18:01:41.215Z
 draft: false
 categories: ["Furniture", "Storage"]
 referenceUrl: "https://www.ikea.com/ca/en/p/brusali-shoe-cabinet-with-3-compartments-white-80480393/"
-availableFrom: ""
+availableFrom: "2026-07-15"
 weight: 21
 sold: false
 onHold: false

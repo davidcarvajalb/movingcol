@@ -5,7 +5,7 @@ date: 2026-06-15T13:56:04.205Z
 draft: false
 categories: ["Lighting"]
 referenceUrl: ""
-availableFrom: ""
+availableFrom: "2026-08-20"
 weight: 28
 sold: false
 onHold: false
