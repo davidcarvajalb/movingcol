@@ -5,7 +5,7 @@ date: 2026-06-15T17:19:40.308Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: ""
-availableFrom: ""
+availableFrom: "2026-07-06"
 weight: 23
 sold: false
 onHold: false
