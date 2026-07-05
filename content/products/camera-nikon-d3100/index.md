@@ -7,7 +7,7 @@ categories: ["Electronics"]
 weight: 12
 referenceUrl: ""
 availableFrom: ""
-sold: false
-onHold: true
+sold: true
+onHold: false
 ---
 The Nikon D3100 is an incredibly popular, beginner-friendly DX-format DSLR camera originally released in 2010. It features a 14.2-megapixel APS-C CMOS sensor, a 3-inch LCD screen, and shoots Full HD 1080p video
