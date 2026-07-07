@@ -6,7 +6,7 @@ draft: false
 categories: ["Storage"]
 referenceUrl: "https://www.ikea.com/ca/en/p/sockerbit-storage-box-with-lid-white-40522088/"
 availableFrom: ""
-weight: 25
+weight: 20
 sold: false
 onHold: false
 ---

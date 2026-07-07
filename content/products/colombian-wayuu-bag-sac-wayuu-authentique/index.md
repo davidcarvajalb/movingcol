@@ -1,12 +1,12 @@
 ---
 title: "Colombian Wayuu Bag / Sac Wayuu authentique"
-price: 60
+price: 30
 date: 2026-06-23T00:28:54.864Z
 draft: false
 categories: ["Travel accessories"]
 referenceUrl: ""
 availableFrom: ""
-weight: 100
+weight: 26
 sold: false
 onHold: false
 ---

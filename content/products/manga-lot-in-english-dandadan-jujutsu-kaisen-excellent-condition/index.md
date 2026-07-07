@@ -1,12 +1,12 @@
 ---
 title: "Manga Lot in English - Dandadan & Jujutsu Kaisen (Excellent Condition)"
-price: 30
+price: 20
 date: 2026-06-23T00:34:50.814Z
 draft: false
 categories: ["Book"]
 referenceUrl: ""
 availableFrom: ""
-weight: 100
+weight: 25
 sold: false
 onHold: false
 ---

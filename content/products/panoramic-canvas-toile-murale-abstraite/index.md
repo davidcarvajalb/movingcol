@@ -6,8 +6,8 @@ draft: false
 categories: ["Decor"]
 referenceUrl: ""
 availableFrom: ""
-weight: 36
-sold: false
-onHold: true
+weight: 48
+sold: true
+onHold: false
 ---
 37''x13''

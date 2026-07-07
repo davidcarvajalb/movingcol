@@ -6,7 +6,7 @@ draft: false
 categories: ["Lighting"]
 referenceUrl: ""
 availableFrom: "2026-08-20"
-weight: 28
+weight: 23
 sold: false
 onHold: false
 ---

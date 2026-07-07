@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.jysk.ca/jegind-dining-table.html"
 availableFrom: "2026-08-20"
-weight: 16
+weight: 15
 sold: false
 onHold: false
 ---

@@ -6,7 +6,7 @@ draft: false
 categories: ["Travel accessories"]
 referenceUrl: "https://co.totto.com/almohada-de-viaje-memory-foam-plane-negra-at79ind002-2510-n01/p"
 availableFrom: ""
-weight: 100
+weight: 32
 sold: false
 onHold: false
 ---

@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: ""
 availableFrom: ""
-weight: 15
+weight: 12
 sold: false
 onHold: false
 ---

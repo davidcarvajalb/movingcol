@@ -6,7 +6,7 @@ draft: false
 categories: ["Electronics", "Travel accessories"]
 referenceUrl: ""
 availableFrom: ""
-weight: 100
+weight: 30
 sold: false
 onHold: false
 ---

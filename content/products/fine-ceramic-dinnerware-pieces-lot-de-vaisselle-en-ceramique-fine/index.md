@@ -1,12 +1,12 @@
 ---
 title: "Fine Ceramic Dinnerware Pieces / Lot de vaisselle en céramique fine"
-price: 40
+price: 30
 date: 2026-06-16T17:04:14.504Z
 draft: false
 categories: ["Kitchen"]
 referenceUrl: ""
 availableFrom: ""
-weight: 15
+weight: 14
 sold: false
 onHold: false
 ---

@@ -4,9 +4,9 @@ price: 2
 date: 2026-06-16T01:11:21.203Z
 draft: false
 categories: ["Kitchen"]
-weight: 18
 referenceUrl: "https://www.ikea.com/ca/en/p/foeljsam-oven-dish-clear-glass-50311269/"
 availableFrom: ""
+weight: 40
 sold: true
 onHold: false
 ---

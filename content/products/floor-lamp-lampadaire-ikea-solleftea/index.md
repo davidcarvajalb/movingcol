@@ -6,9 +6,9 @@ draft: false
 categories: ["Lighting"]
 referenceUrl: ""
 availableFrom: ""
-weight: 35
-sold: false
-onHold: true
+weight: 47
+sold: true
+onHold: false
 ---
 A stylish Scandinavian-style floor lamp featuring curved light-wood tripod legs and a white geometric cutout shade that creates beautiful ambient lighting patterns. Features a convenient foot-switch cord.
 *******************************************

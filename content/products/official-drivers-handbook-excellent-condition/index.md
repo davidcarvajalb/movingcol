@@ -6,8 +6,8 @@ draft: false
 categories: ["Book"]
 referenceUrl: ""
 availableFrom: ""
-weight: 33
+weight: 24
 sold: false
-onHold: true
+onHold: false
 ---
 Looking to ace your knowledge test? I’m selling this official Driver's Handbook. It is an essential resource for anyone learning to drive or looking to refresh their knowledge of road rules, traffic signs, and safe driving practices

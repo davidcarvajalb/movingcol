@@ -6,7 +6,7 @@ draft: false
 categories: ["Kitchen"]
 referenceUrl: "https://lavacanada.ca/products/frying-pans-w-removable-wooden-handle?variant=37564682174636"
 availableFrom: ""
-weight: 38
+weight: 50
 sold: true
 onHold: false
 ---

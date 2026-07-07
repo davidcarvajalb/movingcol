@@ -6,9 +6,9 @@ draft: false
 categories: ["Decor"]
 referenceUrl: "https://www.ikea.com/ca/fr/p/vaexbo-cadre-pour-8-photos-blanc-40256621/"
 availableFrom: ""
-weight: 30
-sold: false
-onHold: true
+weight: 44
+sold: true
+onHold: false
 ---
 Holds 8 pictures so you can create your own personal collage.
 ***************************************

@@ -1,12 +1,12 @@
 ---
 title: "Canon PowerShot G15 / Appareil Photo Canon PowerShot G15"
-price: 450
+price: 350
 date: 2026-06-22T15:45:48.462Z
 draft: false
 categories: ["Electronics", "Travel accessories"]
 referenceUrl: "https://www.amazon.ca/Canon-PowerShot-Digital-Camera-3-Inch/dp/B009B0MY6S"
 availableFrom: ""
-weight: 100
+weight: 28
 sold: false
 onHold: false
 ---

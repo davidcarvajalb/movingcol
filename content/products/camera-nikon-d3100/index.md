@@ -4,9 +4,9 @@ price: 200
 date: 2026-06-15T16:01:30.697Z
 draft: false
 categories: ["Electronics"]
-weight: 12
 referenceUrl: ""
 availableFrom: ""
+weight: 38
 sold: true
 onHold: false
 ---

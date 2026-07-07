@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/kyrre-stool-birch-60416925/"
 availableFrom: ""
-weight: 6
+weight: 5
 sold: false
 onHold: false
 ---
