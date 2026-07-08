@@ -7,7 +7,7 @@ categories: ["Furniture"]
 referenceUrl: ""
 availableFrom: "2026-07-06"
 weight: 17
-sold: false
+sold: true
 onHold: false
 ---
 The seat cushion is deep, plush, and offers great support, making it the perfect spot for reading or relaxing. It has been meticulously cared for and comes from a clean, smoke-free home. Material: High-quality textured upholstery fabric, wooden legs.
