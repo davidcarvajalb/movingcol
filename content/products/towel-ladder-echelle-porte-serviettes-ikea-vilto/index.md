@@ -8,7 +8,7 @@ referenceUrl: "https://www.ikea.com/ca/en/p/vilto-towel-stand-black-00358754/"
 availableFrom: ""
 weight: 22
 sold: false
-onHold: false
+onHold: true
 ---
 A stylish and functional minimalist storage ladder made of solid birch wood. Includes a removable grey fabric hanging organizer with pockets. Perfect for hanging towels in the bathroom or blankets in the living room without drilling into the wall.
 
