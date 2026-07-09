@@ -4,11 +4,11 @@ price: 60
 date: 2026-07-07T15:08:02.225Z
 draft: false
 categories: ["Furniture"]
+weight: 12
 referenceUrl: ""
 availableFrom: ""
-weight: 12
 sold: false
-onHold: false
+onHold: true
 ---
 This solid wood entryway bench perfectly combines style and functionality. Designed to maximize space, it serves as both a comfortable seat and a practical storage solution (ideal for shoes, baskets, or accessories). Its sturdy genuine wood construction adds a warm, timeless touch to any home. In excellent condition.
 
