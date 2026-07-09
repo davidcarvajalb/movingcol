@@ -8,7 +8,7 @@ referenceUrl: ""
 availableFrom: ""
 weight: 30
 sold: false
-onHold: false
+onHold: true
 ---
 Powerful iCAN Portable Power Bank in excellent condition. With its massive 20,000 mAh capacity, it can charge your phone, tablet, or headphones multiple times on a single charge. Perfect for travel, commuting, or emergencies.
 *********************************************
