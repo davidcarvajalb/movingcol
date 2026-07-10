@@ -25,6 +25,7 @@ jobs:
     env:
       CLOUDFLARE_PROJECT_NAME: ${{ vars.CLOUDFLARE_PROJECT_NAME }}
       PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL }}
+      HUGO_CLARITY_PIXEL: ${{ vars.HUGO_CLARITY_PIXEL }}
       HUGO_WHATSAPP_NUMBER: ${{ secrets.HUGO_WHATSAPP_NUMBER }}
 
     steps:
