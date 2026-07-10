@@ -1,5 +1,5 @@
 ---
-title: "Fine Ceramic Dinnerware Pieces / Lot de vaisselle en céramique fine"
+title: "Martha Stewart Peony 12 Piece Porcelain Floral Dinnerware Set"
 price: 30
 date: 2026-06-16T17:04:14.504Z
 draft: false

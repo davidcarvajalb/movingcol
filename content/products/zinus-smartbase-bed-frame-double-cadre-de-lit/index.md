@@ -1,11 +1,11 @@
 ---
-title: "Metal Platform Bed Frame / Cadre de lit"
-price: 50
+title: "ZINUS SmartBase Bed Frame double / Cadre de lit"
+price: 40
 date: 2026-06-18T15:50:48.297Z
 draft: false
 categories: ["Furniture"]
-referenceUrl: "https://a.co/d/02auZub9"
-availableFrom: "2026-07-05"
+referenceUrl: "https://a.co/d/02J0F6pj"
+availableFrom: ""
 weight: 5
 sold: false
 onHold: false

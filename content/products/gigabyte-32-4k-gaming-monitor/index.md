@@ -1,6 +1,6 @@
 ---
-title: "32'' 4K High-end  GIGABYTE M32UC"
-price: 450
+title: "GIGABYTE 32'' 4K Gaming monitor"
+price: 400
 date: 2026-06-17T00:36:16.010Z
 draft: false
 categories: ["Electronics"]

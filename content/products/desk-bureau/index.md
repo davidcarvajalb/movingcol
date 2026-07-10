@@ -5,7 +5,7 @@ date: 2026-06-19T18:09:31.990Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/pahl-desk-height-adjustable-white-s49619340/#content"
-availableFrom: "2026-07-07"
+availableFrom: ""
 weight: 3
 sold: false
 onHold: false

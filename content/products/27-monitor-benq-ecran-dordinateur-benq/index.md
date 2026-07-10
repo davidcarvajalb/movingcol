@@ -1,6 +1,6 @@
 ---
 title: "27'' Monitor BenQ / Écran d'ordinateur BenQ"
-price: 130
+price: 90
 date: 2026-06-18T13:54:33.126Z
 draft: false
 categories: ["Electronics"]

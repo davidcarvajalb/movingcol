@@ -1,6 +1,6 @@
 ---
 title: "Canon PowerShot G15 / Appareil Photo Canon PowerShot G15"
-price: 350
+price: 250
 date: 2026-06-22T15:45:48.462Z
 draft: false
 categories: ["Electronics", "Travel accessories"]
