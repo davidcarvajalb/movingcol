@@ -126,6 +126,39 @@
       box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
     }
 
+    .date-input-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 44px;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .clear-date-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--card-border);
+      border-radius: 0.5rem;
+      background-color: #0f172a;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+    }
+
+    .clear-date-btn.visible {
+      display: flex;
+    }
+
+    .clear-date-btn:hover {
+      color: #fff;
+      border-color: var(--danger);
+      background-color: rgba(239, 68, 68, 0.16);
+    }
+
     .form-group .tagify {
       width: 100%;
       background-color: #0f172a;
@@ -653,7 +686,10 @@
 
           <div class="form-group">
             <label for="available-from">Available from</label>
-            <input type="date" id="available-from" name="availableFrom">
+            <div class="date-input-row">
+              <input type="date" id="available-from" name="availableFrom">
+              <button type="button" class="clear-date-btn" id="clear-available-from" title="Remove available date" aria-label="Remove available date">×</button>
+            </div>
           </div>
 
           <div class="form-group">
@@ -735,6 +771,8 @@
     const existingPhotosContainer = document.getElementById('existing-photos-container');
     const categoryInput = document.getElementById('category');
     const weightInput = document.getElementById('weight');
+    const availableFromInput = document.getElementById('available-from');
+    const clearAvailableFromBtn = document.getElementById('clear-available-from');
     let categoryTagify = null;
 
     let selectedFiles = [];
@@ -806,6 +844,18 @@
         year: 'numeric'
       }).format(date);
     }
+
+    function updateClearAvailableFromButton() {
+      clearAvailableFromBtn.classList.toggle('visible', Boolean(availableFromInput.value));
+    }
+
+    availableFromInput.addEventListener('input', updateClearAvailableFromButton);
+    availableFromInput.addEventListener('change', updateClearAvailableFromButton);
+    clearAvailableFromBtn.addEventListener('click', () => {
+      availableFromInput.value = '';
+      updateClearAvailableFromButton();
+      availableFromInput.focus();
+    });
 
     initCategoryTags();
 
@@ -1054,7 +1104,8 @@
       document.getElementById('price').value = product.price;
       document.getElementById('description').value = product.description || '';
       document.getElementById('reference-url').value = product.referenceUrl || '';
-      document.getElementById('available-from').value = product.availableFrom || '';
+      availableFromInput.value = product.availableFrom || '';
+      updateClearAvailableFromButton();
       setCategoryTags(product.categories || product.category || '');
       weightInput.value = product.weight || 100;
 
@@ -1207,6 +1258,7 @@
       editMode = false;
       editSlug = null;
       photosToDelete = [];
+      updateClearAvailableFromButton();
       
       existingPhotosGroup.style.display = 'none';
       existingPhotosContainer.innerHTML = '';
@@ -1258,7 +1310,7 @@
       const price = document.getElementById('price').value;
       const description = document.getElementById('description').value;
       const referenceUrl = document.getElementById('reference-url').value;
-      const availableFrom = document.getElementById('available-from').value;
+      const availableFrom = availableFromInput.value;
       const category = getCategoryValue();
       const weight = weightInput.value;
 
