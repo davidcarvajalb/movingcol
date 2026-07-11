@@ -1,15 +1,35 @@
 ---
-title: "HIgh-end Ergonomic chair"
-price: 200
+title: "IKEA STYRSPEL Purple Chair / Chaise de jeu violette"
+price: 150
 date: 2026-06-16T15:45:49.074Z
 draft: false
 categories: ["Furniture"]
-referenceUrl: "https://www.ikea.com/ca/fr/p/styrspel-chaise-de-jeu-rouge-70613058/"
+referenceUrl: "https://www.ikea.com/ca/en/files/pdf/38/26/3826dd94/home-office-and-gaming-chairs-buying-guide-fy25-l2-en.pdf"
 availableFrom: "2026-08-20"
-weight: 16
+weight: 7
 sold: false
 onHold: false
 ---
-STYRSPEL gaming chair helps you play at the top of your game. Adjust the headrest, lumbar support, armrests and the seat height and depth – the mesh material keeps you cool when the game heats up! This chair is very easy to clean 
-********************************************
-La chaise de jeu STYRSPEL vous permet de donner le meilleur de vous-même lors de vos parties de jeux vidéos. Appuie-tête, soutien lombaire et accoudoirs réglables comme la hauteur et la profondeur de siège. Matériau en maille évitant d'avoir chaud. Très facile à nettoyer
+**English**
+
+Used IKEA STYRSPEL purple-and-black gaming chair with breathable mesh and multiple adjustments for a work-from-home or gaming setup.
+
+- ✅ Adjustable headrest and lumbar support
+- ✅ Adjustable armrests, seat height and seat depth
+- ✅ Synchronized recline with four locking positions
+- ✅ Tested by IKEA for up to 125 kg (276 lb)
+- 📏 71 cm W x 69 cm D; adjustable overall height from 119 to 142 cm
+- 📦 Sold assembled and ready for pickup
+- 📅 Available for pickup from August 20 to 26
+
+**Français**
+
+Chaise de jeu IKEA STYRSPEL usagée, violette et noire, avec assise et dossier en maille respirante. Ses nombreux réglages conviennent autant au télétravail qu'au gaming.
+
+- ✅ Appuie-tête et soutien lombaire réglables
+- ✅ Accoudoirs, hauteur et profondeur d'assise réglables
+- ✅ Inclinaison synchronisée verrouillable en quatre positions
+- ✅ Testée par IKEA pour une charge maximale de 125 kg (276 lb)
+- 📏 71 cm de largeur x 69 cm de profondeur; hauteur totale de 119 à 142 cm
+- 📦 Vendue assemblée et prête pour le ramassage
+- 📅 Disponible pour ramassage du 20 au 26 août

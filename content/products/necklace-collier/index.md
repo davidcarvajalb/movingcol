@@ -6,7 +6,7 @@ draft: false
 categories: ["Jewelry"]
 referenceUrl: ""
 availableFrom: ""
-weight: 27
+weight: 26
 sold: false
 onHold: false
 ---

@@ -6,7 +6,7 @@ draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/pahl-desk-height-adjustable-white-s49619340/#content"
 availableFrom: ""
-weight: 3
+weight: 10
 sold: false
 onHold: false
 ---

@@ -6,7 +6,7 @@ draft: false
 categories: ["Decor", "christmas"]
 referenceUrl: ""
 availableFrom: ""
-weight: 100
+weight: 32
 sold: false
 onHold: false
 ---

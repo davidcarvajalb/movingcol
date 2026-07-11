@@ -4,10 +4,10 @@ price: 250
 date: 2026-06-22T15:45:48.462Z
 draft: false
 categories: ["Electronics", "Travel accessories"]
+weight: 28
 referenceUrl: "https://www.amazon.ca/Canon-PowerShot-Digital-Camera-3-Inch/dp/B009B0MY6S"
 availableFrom: ""
-weight: 28
-sold: false
+sold: true
 onHold: false
 ---
 The Canon PowerShot G15 is a legendary premium compact camera, highly sought after by enthusiasts and street photographers for its incredible build quality and stunning tactile controls.

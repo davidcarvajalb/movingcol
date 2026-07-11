@@ -6,7 +6,7 @@ draft: false
 categories: ["Kitchen"]
 referenceUrl: ""
 availableFrom: ""
-weight: 14
+weight: 13
 sold: false
 onHold: false
 ---

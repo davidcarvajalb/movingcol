@@ -4,7 +4,7 @@
   <!-- Hero / Intro Section -->
   <section class="hero-section">
     <h1>Item Catalog</h1>
-    <p>Browse the list of available items. Click on any item to view more photos and details. If you're interested, send me a message on WhatsApp.</p>
+    <p class="hero-description">Browse the list of available items. Click on any item to view more photos and details. If you're interested, send me a message on WhatsApp.</p>
     
     <!-- Real-time client-side search -->
     <div class="search-bar-container">
@@ -18,7 +18,9 @@
   <!-- Product Grid -->
   <section class="products-section">
     <!-- Status takes priority; preserve Weight order within each group. -->
+    {{ $activeProducts := slice }}
     {{ $availableProducts := slice }}
+    {{ $futureProducts := slice }}
     {{ $onHoldProducts := slice }}
     {{ $soldProducts := slice }}
     {{ range (where .Site.RegularPages "Section" "products").ByWeight }}
@@ -27,12 +29,24 @@
       {{ else if .Params.onHold }}
         {{ $onHoldProducts = $onHoldProducts | append . }}
       {{ else }}
-        {{ $availableProducts = $availableProducts | append . }}
+        {{ $activeProducts = $activeProducts | append . }}
+        {{ $isFuture := false }}
+        {{ with .Params.availableFrom }}
+          {{ $availableFrom := time . }}
+          {{ if $availableFrom.After now }}
+            {{ $isFuture = true }}
+          {{ end }}
+        {{ end }}
+        {{ if $isFuture }}
+          {{ $futureProducts = $futureProducts | append . }}
+        {{ else }}
+          {{ $availableProducts = $availableProducts | append . }}
+        {{ end }}
       {{ end }}
     {{ end }}
 
     {{ $productos := slice }}
-    {{ range $availableProducts }}
+    {{ range $activeProducts }}
       {{ $productos = $productos | append . }}
     {{ end }}
     {{ range $onHoldProducts }}
@@ -49,28 +63,17 @@
         <p>No products have been added to the catalog yet. Use the local admin panel to add items.</p>
       </div>
     {{ else }}
-      <!-- Extract Unique Categories dynamically -->
-      {{ $categories := slice }}
-      {{ range $productos }}
-        {{ with .Params.categories }}
-          {{ range . }}
-            {{ if ne . "" }}
-              {{ $categories = $categories | append . }}
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-      {{ $uniqueCategories := uniq $categories }}
-
-      <!-- Render Category Filters -->
-      {{ if gt (len $uniqueCategories) 0 }}
-        <div class="category-filters-container">
-          <button class="filter-btn active" data-filter="all">All</button>
-          {{ range $uniqueCategories }}
-            <button class="filter-btn" data-filter="{{ . | lower }}">{{ . }}</button>
-          {{ end }}
-        </div>
-      {{ end }}
+      <div class="availability-filters-container" aria-label="Filter products by availability">
+        <button class="filter-btn active" data-status="all" aria-pressed="true">
+          All <span class="filter-count">{{ add (len $availableProducts) (len $futureProducts) }}</span>
+        </button>
+        <button class="filter-btn" data-status="on-hold" aria-pressed="false">
+          On hold <span class="filter-count">{{ len $onHoldProducts }}</span>
+        </button>
+        <button class="filter-btn" data-status="sold" aria-pressed="false">
+          Sold <span class="filter-count">{{ len $soldProducts }}</span>
+        </button>
+      </div>
 
       <div class="products-grid" id="products-grid">
         {{ range $productos }}
@@ -81,18 +84,30 @@
               {{ $images = $images | append . }}
             {{ end }}
           {{ end }}
-          {{ $catStr := "" }}
-          {{ with .Params.categories }}
-            {{ $catStr = delimit . "||" }}
+          {{ $status := "available" }}
+          {{ if .Params.sold }}
+            {{ $status = "sold" }}
+          {{ else if .Params.onHold }}
+            {{ $status = "on-hold" }}
+          {{ else }}
+            {{ with .Params.availableFrom }}
+              {{ $availableFrom := time . }}
+              {{ if $availableFrom.After now }}
+                {{ $status = "future" }}
+              {{ end }}
+            {{ end }}
           {{ end }}
           
-          <article class="product-card {{ if .Params.sold }}sold{{ else if .Params.onHold }}on-hold{{ end }}" data-title="{{ .Title | lower }}" data-desc="{{ .Plain | lower }}" data-category="{{ $catStr | lower }}">
+          <article class="product-card {{ if .Params.sold }}sold{{ else if .Params.onHold }}on-hold{{ end }}" data-title="{{ .Title | lower }}" data-desc="{{ .Plain | lower }}" data-status="{{ $status }}">
             <a href="{{ .RelPermalink }}" class="product-card-link">
               <div class="product-card-image-wrapper">
                 {{ if .Params.sold }}
                   <span class="sold-badge">Sold</span>
                 {{ else if .Params.onHold }}
                   <span class="status-badge on-hold-badge">On Hold</span>
+                {{ else if eq $status "future" }}
+                  {{ $availableFrom := time .Params.availableFrom }}
+                  <span class="status-badge future-badge">Available {{ $availableFrom | time.Format "Jan 2" }}</span>
                 {{ end }}
                 {{ if gt (len $images) 0 }}
                   {{ $firstImage := index $images 0 }}
@@ -135,13 +150,13 @@
 
 {{ define "scripts" }}
 <script>
-  // Advanced search + category filter combination logic
+  // Combine real-time search with the selected availability state.
   const searchInput = document.getElementById('product-search');
   const productsGrid = document.getElementById('products-grid');
   const noResults = document.getElementById('no-results');
   const filterButtons = document.querySelectorAll('.filter-btn');
   
-  let currentCategory = 'all';
+  let currentStatus = 'all';
   
   if (productsGrid) {
     const cards = productsGrid.querySelectorAll('.product-card');
@@ -153,13 +168,13 @@
       cards.forEach(card => {
         const title = card.getAttribute('data-title');
         const desc = card.getAttribute('data-desc');
-        const cardCategoryStr = card.getAttribute('data-category') || '';
-        const cardCategories = cardCategoryStr.split('||').map(c => c.trim()).filter(c => c);
-        
         const matchesSearch = title.includes(query) || desc.includes(query);
-        const matchesCategory = currentCategory === 'all' || cardCategories.includes(currentCategory);
+        const cardStatus = card.getAttribute('data-status');
+        const matchesStatus = currentStatus === 'all'
+          ? cardStatus === 'available' || cardStatus === 'future'
+          : cardStatus === currentStatus;
         
-        if (matchesSearch && matchesCategory) {
+        if (matchesSearch && matchesStatus) {
           card.style.display = 'block';
           visibleCount++;
         } else {
@@ -182,15 +197,17 @@
     
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Toggle active button
         filterButtons.forEach(b => b.classList.remove('active'));
+        filterButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
         
-        // Update category and apply filters
-        currentCategory = btn.getAttribute('data-filter').toLowerCase().trim();
+        currentStatus = btn.getAttribute('data-status');
         filterProducts();
       });
     });
+
+    filterProducts();
   }
 </script>
 {{ end }}

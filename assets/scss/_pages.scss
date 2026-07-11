@@ -14,6 +14,10 @@
   margin-left: auto;
   margin-right: auto;
 
+  @media (max-width: 767px) {
+    margin-bottom: 2rem;
+  }
+
   h1 {
     font-size: 2.5rem;
     font-weight: 800;
@@ -29,6 +33,12 @@
     font-size: 1.1rem;
     font-weight: 300;
     margin-bottom: 2rem;
+  }
+
+  .hero-description {
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 }
 
@@ -432,6 +442,18 @@
       margin-top: 0.75rem;
     }
 
+    ul {
+      display: grid;
+      gap: 0.4rem;
+      margin: 0.75rem 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      margin: 0;
+    }
+
     hr {
       margin: 0.85rem 0;
       border: 0;
@@ -626,6 +648,11 @@
 .on-hold-badge {
   background-color: #f59e0b;
   color: #111827;
+}
+
+.future-badge {
+  background-color: #fbbf24;
+  color: #422006;
 }
 
 .sold-action-card {

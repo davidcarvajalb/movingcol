@@ -6,7 +6,7 @@ draft: false
 categories: ["Travel accessories"]
 referenceUrl: ""
 availableFrom: ""
-weight: 26
+weight: 16
 sold: false
 onHold: false
 ---

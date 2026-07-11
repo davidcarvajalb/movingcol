@@ -6,7 +6,7 @@ draft: false
 categories: ["Home appliances"]
 referenceUrl: ""
 availableFrom: ""
-weight: 21
+weight: 19
 sold: false
 onHold: false
 ---
