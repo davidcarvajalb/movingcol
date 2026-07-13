@@ -4,11 +4,11 @@ price: 90
 date: 2026-06-18T13:54:33.126Z
 draft: false
 categories: ["Electronics"]
-weight: 2
 referenceUrl: "https://www.benq.com/en-ca/monitor/home/gw2790/spec.html"
 availableFrom: ""
-sold: false
-onHold: true
+weight: 2
+sold: true
+onHold: false
 ---
 **English**
 
