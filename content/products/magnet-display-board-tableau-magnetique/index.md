@@ -4,10 +4,10 @@ price: 30
 date: 2026-07-07T14:27:29.593Z
 draft: false
 categories: ["Decor"]
+weight: 14
 referenceUrl: ""
 availableFrom: ""
-weight: 14
-sold: false
+sold: true
 onHold: false
 ---
 Proudly display your travel memories with this large, elegant magnetic board. Perfect for organizing and showcasing your collection of travel magnets, souvenirs, and photos
