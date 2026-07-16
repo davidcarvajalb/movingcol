@@ -4,11 +4,11 @@ price: 300
 date: 2026-06-18T13:42:22.363Z
 draft: false
 categories: ["Electronics"]
+weight: 4
 referenceUrl: "https://support.apple.com/en-us/111963"
 availableFrom: ""
-weight: 4
 sold: false
-onHold: false
+onHold: true
 ---
 **English**
 
