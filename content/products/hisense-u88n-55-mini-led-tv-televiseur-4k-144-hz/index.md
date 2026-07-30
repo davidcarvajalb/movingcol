@@ -1,6 +1,6 @@
 ---
 title: "Hisense U88N 55\" Mini-LED TV / Téléviseur 4K 144 Hz"
-price: 700
+price: 600
 date: 2026-06-16T18:37:45.594Z
 draft: false
 categories: ["Electronics"]

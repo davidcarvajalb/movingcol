@@ -7,7 +7,7 @@ categories: ["Travel accessories"]
 referenceUrl: ""
 availableFrom: ""
 weight: 16
-sold: false
+sold: true
 onHold: false
 ---
 EN - Pre-owned authentic Wayuu bag (handmade by artisans in Guajira-Colombia)
