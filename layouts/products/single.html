@@ -59,6 +59,35 @@
           </div>
         {{ end }}
       {{ end }}
+
+      {{ $videoId := "" }}
+      {{ with .Params.videoUrl }}
+        {{ $url := . }}
+        {{ if strings.Contains $url "youtu.be/" }}
+          {{ $videoId = replaceRE `.*youtu\.be/([\w-]+).*` "$1" $url }}
+        {{ else if strings.Contains $url "/shorts/" }}
+          {{ $videoId = replaceRE `.*/shorts/([\w-]+).*` "$1" $url }}
+        {{ else if strings.Contains $url "/embed/" }}
+          {{ $videoId = replaceRE `.*/embed/([\w-]+).*` "$1" $url }}
+        {{ else if strings.Contains $url "v=" }}
+          {{ $videoId = replaceRE `.*[?&]v=([\w-]+).*` "$1" $url }}
+        {{ end }}
+      {{ end }}
+      {{ with $videoId }}
+        <div class="detail-video-section">
+          <h3>Video</h3>
+          <div class="video-responsive">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/{{ . }}"
+              title="Product video"
+              loading="lazy"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      {{ end }}
     </div>
 
     <!-- Right: Product Information Section -->

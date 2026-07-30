@@ -89,7 +89,7 @@ function formatYamlString(value) {
   return JSON.stringify(String(value || '').replace(/\\"/g, '"'));
 }
 
-function normalizeReferenceUrl(url) {
+function normalizeUrl(url) {
   const value = (url || '').trim();
   if (!value) return '';
 
@@ -103,6 +103,19 @@ function normalizeReferenceUrl(url) {
   }
 
   return '';
+}
+
+const YOUTUBE_HOSTS = ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be', 'youtube-nocookie.com'];
+
+function normalizeVideoUrl(url) {
+  const normalized = normalizeUrl(url);
+  if (!normalized) return '';
+
+  try {
+    return YOUTUBE_HOSTS.includes(new URL(normalized).hostname.toLowerCase()) ? normalized : '';
+  } catch (error) {
+    return '';
+  }
 }
 
 function normalizeAvailableFrom(date) {
@@ -186,6 +199,7 @@ app.get('/api/products', (req, res) => {
             category: categories.join(', '),
             categories: categories,
             referenceUrl: attributes.referenceUrl || '',
+            videoUrl: attributes.videoUrl || '',
             availableFrom: normalizeAvailableFrom(attributes.availableFrom),
             weight: parseInt(attributes.weight) || 100,
             images: images,
@@ -211,9 +225,9 @@ app.get('/api/products', (req, res) => {
 });
 
 // API: Create new product
-app.post('/api/products', upload.array('photos', 10), (req, res) => {
+app.post('/api/products', upload.array('photos'), (req, res) => {
   try {
-    const { title, price, description, category, referenceUrl, availableFrom, weight } = req.body;
+    const { title, price, description, category, referenceUrl, videoUrl, availableFrom, weight } = req.body;
     if (!title || !price) {
       return res.status(400).json({ error: 'Title and price are required.' });
     }
@@ -254,7 +268,8 @@ app.post('/api/products', upload.array('photos', 10), (req, res) => {
     const dateStr = new Date().toISOString();
     const weightNum = parseInt(weight) || 100;
     const catStr = formatCategories(category);
-    const refUrl = normalizeReferenceUrl(referenceUrl);
+    const refUrl = normalizeUrl(referenceUrl);
+    const videoUrlVal = normalizeVideoUrl(videoUrl);
     const availableFromDate = normalizeAvailableFrom(availableFrom);
     const markdownContent = `---
 title: ${formatYamlString(title)}
@@ -263,6 +278,7 @@ date: ${dateStr}
 draft: false
 categories: ${catStr}
 referenceUrl: ${formatYamlString(refUrl)}
+videoUrl: ${formatYamlString(videoUrlVal)}
 availableFrom: ${formatYamlString(availableFromDate)}
 weight: ${weightNum}
 sold: false
@@ -281,7 +297,7 @@ ${description || ''}
 });
 
 // API: Update product
-app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
+app.post('/api/products/:oldSlug', upload.array('photos'), (req, res) => {
   try {
     const oldSlug = req.params.oldSlug;
     const oldProductDir = path.join(contentDir, oldSlug);
@@ -290,7 +306,7 @@ app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
       return res.status(404).json({ error: 'Product does not exist.' });
     }
 
-    const { title, price, description, category, referenceUrl, availableFrom, weight, deletePhotos, photoOrder } = req.body;
+    const { title, price, description, category, referenceUrl, videoUrl, availableFrom, weight, deletePhotos, photoOrder } = req.body;
     if (!title || !price) {
       return res.status(400).json({ error: 'Title and price are required.' });
     }
@@ -404,7 +420,8 @@ app.post('/api/products/:oldSlug', upload.array('photos', 10), (req, res) => {
     // 6. Write updated Markdown
     const weightNum = parseInt(weight) || 100;
     const catStr = formatCategories(category);
-    const refUrl = normalizeReferenceUrl(referenceUrl);
+    const refUrl = normalizeUrl(referenceUrl);
+    const videoUrlVal = normalizeVideoUrl(videoUrl);
     const availableFromDate = normalizeAvailableFrom(availableFrom);
     const markdownContent = `---
 title: ${formatYamlString(title)}
@@ -413,6 +430,7 @@ date: ${dateStr}
 draft: false
 categories: ${catStr}
 referenceUrl: ${formatYamlString(refUrl)}
+videoUrl: ${formatYamlString(videoUrlVal)}
 availableFrom: ${formatYamlString(availableFromDate)}
 weight: ${weightNum}
 sold: ${originalSold}
@@ -478,7 +496,8 @@ date: ${attributes.date || new Date().toISOString()}
 draft: false
 categories: ${categoriesStr}
 weight: ${parseInt(attributes.weight) || 100}
-referenceUrl: ${formatYamlString(normalizeReferenceUrl(attributes.referenceUrl))}
+referenceUrl: ${formatYamlString(normalizeUrl(attributes.referenceUrl))}
+videoUrl: ${formatYamlString(normalizeVideoUrl(attributes.videoUrl))}
 availableFrom: ${formatYamlString(availableFrom)}
 sold: ${soldStatus}
 onHold: ${onHoldStatus}
@@ -513,14 +532,15 @@ app.post('/api/reorder-products', (req, res) => {
         const titleVal = attributes.title || slug;
         const priceVal = parseFloat(attributes.price) || 0;
         const dateVal = attributes.date || new Date().toISOString();
-        const referenceUrlVal = normalizeReferenceUrl(attributes.referenceUrl);
+        const referenceUrlVal = normalizeUrl(attributes.referenceUrl);
+        const videoUrlVal = normalizeVideoUrl(attributes.videoUrl);
         const availableFromVal = normalizeAvailableFrom(attributes.availableFrom);
-        
+
         const category = formatCategories(attributes.categories);
-        
+
         const soldVal = parseBoolean(attributes.sold);
         const onHoldVal = parseBoolean(attributes.onHold);
-        
+
         const markdownContent = `---
 title: ${formatYamlString(titleVal)}
 price: ${priceVal}
@@ -528,6 +548,7 @@ date: ${dateVal}
 draft: false
 categories: ${category}
 referenceUrl: ${formatYamlString(referenceUrlVal)}
+videoUrl: ${formatYamlString(videoUrlVal)}
 availableFrom: ${formatYamlString(availableFromVal)}
 weight: ${weightNum}
 sold: ${soldVal}

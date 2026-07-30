@@ -703,7 +703,12 @@
           </div>
 
           <div class="form-group">
-            <label>Product Photos (Max. 10)</label>
+            <label for="video-url">YouTube Video URL</label>
+            <input type="url" id="video-url" name="videoUrl" placeholder="https://www.youtube.com/watch?v=...">
+          </div>
+
+          <div class="form-group">
+            <label>Product Photos</label>
             <div class="file-dropzone" id="dropzone">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
               <p>Drag your photos here or click to browse</p>
@@ -896,12 +901,6 @@
         showToast('Only JPG, PNG, GIF, and WebP images are supported.', 'error');
       }
       
-      // Limit to 10 files
-      if (selectedFiles.length + imageFiles.length > 10) {
-        showToast('You can upload a maximum of 10 images per product.', 'error');
-        return;
-      }
-
       imageFiles.forEach(file => {
         selectedFiles.push(file);
         
@@ -971,6 +970,7 @@
               ${p.availableFrom ? `<p class="availability">Available from ${formatDisplayDate(p.availableFrom)}</p>` : ''}
               <p class="desc">${p.category ? `[${p.category}] ` : ''}${p.description || 'No description'}</p>
               ${p.referenceUrl ? '<p class="desc">Reference link saved</p>' : ''}
+              ${p.videoUrl ? '<p class="desc">Video saved</p>' : ''}
             </div>
             <div class="product-actions">
               <button class="edit-btn" title="Edit Product" onclick="event.stopPropagation(); startEdit('${p.slug}')">
@@ -1104,6 +1104,7 @@
       document.getElementById('price').value = product.price;
       document.getElementById('description').value = product.description || '';
       document.getElementById('reference-url').value = product.referenceUrl || '';
+      document.getElementById('video-url').value = product.videoUrl || '';
       availableFromInput.value = product.availableFrom || '';
       updateClearAvailableFromButton();
       setCategoryTags(product.categories || product.category || '');
@@ -1310,6 +1311,7 @@
       const price = document.getElementById('price').value;
       const description = document.getElementById('description').value;
       const referenceUrl = document.getElementById('reference-url').value;
+      const videoUrl = document.getElementById('video-url').value;
       const availableFrom = availableFromInput.value;
       const category = getCategoryValue();
       const weight = weightInput.value;
@@ -1329,6 +1331,7 @@
       formData.append('price', price);
       formData.append('description', description);
       formData.append('referenceUrl', referenceUrl);
+      formData.append('videoUrl', videoUrl);
       formData.append('availableFrom', availableFrom);
       formData.append('category', category);
       formData.append('weight', weight);
