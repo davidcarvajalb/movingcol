@@ -5,8 +5,9 @@ date: 2026-06-26T18:17:18.172Z
 draft: false
 categories: ["Clothes"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 22
+weight: 17
 sold: false
 onHold: false
 ---

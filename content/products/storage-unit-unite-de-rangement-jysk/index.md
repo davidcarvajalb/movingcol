@@ -5,8 +5,9 @@ date: 2026-06-15T18:06:46.516Z
 draft: false
 categories: ["Furniture", "Storage"]
 referenceUrl: "https://www.jysk.ca/fyn-4-drawer-chest.html"
+videoUrl: ""
 availableFrom: ""
-weight: 41
+weight: 47
 sold: true
 onHold: false
 ---

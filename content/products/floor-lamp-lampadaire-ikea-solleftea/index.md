@@ -5,8 +5,9 @@ date: 2026-06-15T14:02:10.640Z
 draft: false
 categories: ["Lighting"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 47
+weight: 53
 sold: true
 onHold: false
 ---

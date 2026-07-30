@@ -5,8 +5,9 @@ date: 2026-06-22T15:52:04.419Z
 draft: false
 categories: ["Jewelry"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 26
+weight: 21
 sold: false
 onHold: false
 ---

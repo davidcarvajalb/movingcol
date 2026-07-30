@@ -5,8 +5,9 @@ date: 2026-06-15T17:19:40.308Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 12
+weight: 9
 sold: false
 onHold: false
 ---

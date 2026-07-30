@@ -5,8 +5,9 @@ date: 2026-06-15T00:22:15.796Z
 draft: false
 categories: ["Book"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 49
+weight: 55
 sold: true
 onHold: false
 ---

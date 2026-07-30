@@ -5,8 +5,9 @@ date: 2026-06-19T18:13:14.876Z
 draft: false
 categories: ["garden"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 28
+weight: 23
 sold: false
 onHold: false
 ---

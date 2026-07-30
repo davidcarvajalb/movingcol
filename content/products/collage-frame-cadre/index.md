@@ -5,8 +5,9 @@ date: 2026-06-18T15:40:45.587Z
 draft: false
 categories: ["Decor"]
 referenceUrl: "https://www.ikea.com/ca/fr/p/vaexbo-cadre-pour-8-photos-blanc-40256621/"
+videoUrl: ""
 availableFrom: ""
-weight: 44
+weight: 50
 sold: true
 onHold: false
 ---

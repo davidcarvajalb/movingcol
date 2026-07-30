@@ -5,8 +5,9 @@ date: 2026-06-16T18:44:13.176Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/kallax-shelf-unit-white-00275848/"
+videoUrl: ""
 availableFrom: ""
-weight: 36
+weight: 42
 sold: true
 onHold: false
 ---

@@ -5,8 +5,9 @@ date: 2026-06-22T14:56:57.581Z
 draft: false
 categories: ["Electronics", "Travel accessories"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 30
+weight: 41
 sold: true
 onHold: false
 ---

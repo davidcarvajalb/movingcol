@@ -1,10 +1,11 @@
 ---
 title: "GIGABYTE M32U 32\" 4K / Moniteur gaming 144 Hz"
-price: 450
+price: 400
 date: 2026-06-17T00:36:16.010Z
 draft: false
 categories: ["Electronics"]
 referenceUrl: "https://www.gigabyte.com/Monitor/M32U"
+videoUrl: ""
 availableFrom: "2026-08-15"
 weight: 3
 sold: false

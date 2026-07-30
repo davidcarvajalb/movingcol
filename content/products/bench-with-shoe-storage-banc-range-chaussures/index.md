@@ -4,9 +4,10 @@ price: 60
 date: 2026-07-07T15:08:02.225Z
 draft: false
 categories: ["Furniture"]
-weight: 12
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
+weight: 35
 sold: true
 onHold: false
 ---

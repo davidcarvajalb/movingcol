@@ -5,8 +5,9 @@ date: 2026-06-15T14:10:06.385Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/vilto-towel-stand-black-00358754/"
+videoUrl: ""
 availableFrom: ""
-weight: 22
+weight: 39
 sold: true
 onHold: false
 ---

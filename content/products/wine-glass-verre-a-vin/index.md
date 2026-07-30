@@ -5,8 +5,9 @@ date: 2026-06-21T13:32:42.250Z
 draft: false
 categories: ["Kitchen"]
 referenceUrl: "https://www.ikea.com/ca/en/p/svalka-wine-glass-clear-glass-30015123/"
+videoUrl: ""
 availableFrom: ""
-weight: 25
+weight: 20
 sold: false
 onHold: false
 ---

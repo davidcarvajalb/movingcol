@@ -5,8 +5,9 @@ date: 2026-06-26T18:08:48.399Z
 draft: false
 categories: ["Decor", "christmas"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 32
+weight: 27
 sold: false
 onHold: false
 ---

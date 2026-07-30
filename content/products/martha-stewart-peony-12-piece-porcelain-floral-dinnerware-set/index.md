@@ -5,8 +5,9 @@ date: 2026-06-16T17:04:14.504Z
 draft: false
 categories: ["Kitchen"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 13
+weight: 10
 sold: false
 onHold: false
 ---

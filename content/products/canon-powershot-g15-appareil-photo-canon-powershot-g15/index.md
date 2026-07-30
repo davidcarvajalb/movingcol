@@ -4,9 +4,10 @@ price: 250
 date: 2026-06-22T15:45:48.462Z
 draft: false
 categories: ["Electronics", "Travel accessories"]
-weight: 28
 referenceUrl: "https://www.amazon.ca/Canon-PowerShot-Digital-Camera-3-Inch/dp/B009B0MY6S"
+videoUrl: ""
 availableFrom: ""
+weight: 40
 sold: true
 onHold: false
 ---

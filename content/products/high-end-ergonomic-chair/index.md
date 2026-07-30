@@ -5,8 +5,9 @@ date: 2026-06-16T15:45:49.074Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/files/pdf/38/26/3826dd94/home-office-and-gaming-chairs-buying-guide-fy25-l2-en.pdf"
+videoUrl: ""
 availableFrom: "2026-08-20"
-weight: 7
+weight: 5
 sold: false
 onHold: false
 ---

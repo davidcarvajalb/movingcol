@@ -5,8 +5,9 @@ date: 2026-06-16T00:07:20.910Z
 draft: false
 categories: ["Electronics"]
 referenceUrl: ""
+videoUrl: ""
 availableFrom: ""
-weight: 46
+weight: 52
 sold: true
 onHold: false
 ---

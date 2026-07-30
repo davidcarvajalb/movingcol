@@ -5,8 +5,9 @@ date: 2026-06-15T13:35:17.523Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/smussla-nightstand-shelf-unit-white-10469493/"
+videoUrl: ""
 availableFrom: ""
-weight: 43
+weight: 49
 sold: true
 onHold: false
 ---

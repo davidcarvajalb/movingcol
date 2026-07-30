@@ -5,8 +5,9 @@ date: 2026-06-15T00:19:39.031Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/kallax-shelf-unit-black-brown-20275885/"
+videoUrl: ""
 availableFrom: ""
-weight: 51
+weight: 57
 sold: true
 onHold: false
 ---

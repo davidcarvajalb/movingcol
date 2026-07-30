@@ -5,8 +5,9 @@ date: 2026-06-18T13:54:33.126Z
 draft: false
 categories: ["Electronics"]
 referenceUrl: "https://www.benq.com/en-ca/monitor/home/gw2790/spec.html"
+videoUrl: ""
 availableFrom: ""
-weight: 2
+weight: 33
 sold: true
 onHold: false
 ---
