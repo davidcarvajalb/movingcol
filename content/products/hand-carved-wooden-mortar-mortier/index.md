@@ -1,6 +1,6 @@
 ---
 title: "Hand-Carved Wooden Mortar / Mortier "
-price: 25
+price: 10
 date: 2026-06-22T14:23:57.032Z
 draft: false
 categories: ["Kitchen"]

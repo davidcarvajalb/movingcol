@@ -135,6 +135,21 @@ function getProductStatusRank(product) {
   return 0;
 }
 
+// Filesystem directory order is not a reliable gallery order. Sort the
+// sequential foto-N names numerically so foto-10 follows foto-9.
+function sortImagesNaturally(images) {
+  return images.sort((a, b) => {
+    const aMatch = a.match(/^foto-(\d+)/i);
+    const bMatch = b.match(/^foto-(\d+)/i);
+    if (aMatch && bMatch) {
+      return Number(aMatch[1]) - Number(bMatch[1]) || a.localeCompare(b);
+    }
+    if (aMatch) return -1;
+    if (bMatch) return 1;
+    return a.localeCompare(b);
+  });
+}
+
 function parseCategories(value) {
   if (Array.isArray(value)) {
     return value.map(String).map(item => item.trim()).filter(Boolean);
@@ -186,7 +201,9 @@ app.get('/api/products', (req, res) => {
           
           // Get images in the same folder
           const files = fs.readdirSync(folderPath);
-          const images = files.filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file));
+          const images = sortImagesNaturally(
+            files.filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
+          );
 
           const categories = parseCategories(attributes.categories);
 

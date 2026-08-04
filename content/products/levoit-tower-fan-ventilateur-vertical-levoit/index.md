@@ -1,6 +1,6 @@
 ---
 title: "LEVOIT Tower Fan / Ventilateur vertical LEVOIT "
-price: 60
+price: 50
 date: 2026-07-10T00:37:26.512Z
 draft: false
 categories: ["Electronics"]

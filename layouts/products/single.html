@@ -8,11 +8,15 @@
   <div class="product-detail-layout">
     <!-- Left: Gallery Section -->
     <div class="product-gallery">
+      {{ $page := . }}
       {{ $images := slice }}
-      {{ range .Resources.ByType "image" }}
-        {{ $ext := path.Ext .Name | lower }}
-        {{ if not (in (slice ".heic" ".heif") $ext) }}
-          {{ $images = $images | append . }}
+      {{ $imageResources := $page.Resources.ByType "image" }}
+      {{ range $number := seq 1 (len $imageResources) }}
+        {{ with $page.Resources.GetMatch (printf "foto-%d.*" $number) }}
+          {{ $ext := path.Ext .Name | lower }}
+          {{ if not (in (slice ".heic" ".heif") $ext) }}
+            {{ $images = $images | append . }}
+          {{ end }}
         {{ end }}
       {{ end }}
       

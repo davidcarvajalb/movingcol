@@ -1,6 +1,6 @@
 ---
 title: "Table "
-price: 80
+price: 70
 date: 2026-06-16T16:49:33.148Z
 draft: false
 categories: ["Furniture"]

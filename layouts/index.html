@@ -77,11 +77,15 @@
 
       <div class="products-grid" id="products-grid">
         {{ range $productos }}
+          {{ $product := . }}
           {{ $images := slice }}
-          {{ range .Resources.ByType "image" }}
-            {{ $ext := path.Ext .Name | lower }}
-            {{ if not (in (slice ".heic" ".heif") $ext) }}
-              {{ $images = $images | append . }}
+          {{ $imageResources := $product.Resources.ByType "image" }}
+          {{ range $number := seq 1 (len $imageResources) }}
+            {{ with $product.Resources.GetMatch (printf "foto-%d.*" $number) }}
+              {{ $ext := path.Ext .Name | lower }}
+              {{ if not (in (slice ".heic" ".heif") $ext) }}
+                {{ $images = $images | append . }}
+              {{ end }}
             {{ end }}
           {{ end }}
           {{ $status := "available" }}

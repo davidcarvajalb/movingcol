@@ -927,7 +927,9 @@
     // Load products list from API
     async function loadProducts() {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch(`/api/products?_=${Date.now()}`, {
+          cache: 'no-store'
+        });
         const products = await response.json();
         allProducts = products; // Save to global state
         updateCategoryWhitelist(products);
@@ -1362,9 +1364,12 @@
         const result = await response.json();
 
         if (response.ok && result.success) {
-          showToast(editMode ? 'Product updated successfully' : 'Product saved successfully');
+          const wasEdit = editMode;
           cancelEdit();
-          loadProducts();
+          // Wait for the fresh product list before allowing the editor to be
+          // reopened, otherwise it can use the pre-save photo order in memory.
+          await loadProducts();
+          showToast(wasEdit ? 'Product updated successfully' : 'Product saved successfully');
         } else {
           showToast(result.error || 'Error saving product', 'error');
         }

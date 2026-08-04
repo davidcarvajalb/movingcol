@@ -1,12 +1,12 @@
 ---
 title: "Floor Lamp (2) / Lampadaire "
-price: 50
+price: 40
 date: 2026-06-15T13:56:04.205Z
 draft: false
 categories: ["Lighting"]
 referenceUrl: ""
 videoUrl: ""
-availableFrom: "2026-08-20"
+availableFrom: "2026-08-24"
 weight: 11
 sold: false
 onHold: false

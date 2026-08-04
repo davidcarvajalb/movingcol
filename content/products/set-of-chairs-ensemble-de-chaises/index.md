@@ -1,13 +1,12 @@
 ---
 title: "Set of Chairs / Ensemble de Chaises "
-price: 30
+price: 20
 date: 2026-06-15T17:23:42.647Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: ""
-videoUrl: ""
 availableFrom: "2026-08-20"
-weight: 28
+weight: 34
 sold: false
 onHold: false
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Humidifier / Humidificateur"
-price: 10
+price: 5
 date: 2026-06-15T15:41:05.958Z
 draft: false
 categories: ["Home appliances"]

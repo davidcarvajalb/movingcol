@@ -1,5 +1,5 @@
 ---
-title: "Storage box / Boîte de rangement"
+title: "3 Storage boxes / 3  Boîtes de rangement (different size)"
 price: 10
 date: 2026-06-15T15:45:22.315Z
 draft: false
@@ -11,6 +11,9 @@ weight: 15
 sold: false
 onHold: false
 ---
-SOCKERBIT  Storage box with lid, white, 38x76x30 cm (15x30x11 ¾ ")
+SOCKERBIT  Storage box with lid, white, 
+38x76x30 cm (15x30x11 ¾ ")
+38x51x30 cm
 
 Bac de rangement SOCKERBIT avec couvercle, blanc  38x76x30 cm (15x30x11 ¾ ")
+ 38x51x30 cm

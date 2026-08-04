@@ -1,13 +1,12 @@
 ---
 title: "Desk / Bureau "
-price: 40
+price: 20
 date: 2026-06-19T18:09:31.990Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/pahl-desk-height-adjustable-white-s49619340/#content"
-videoUrl: ""
-availableFrom: ""
-weight: 7
+availableFrom: "2026-08-21"
+weight: 10
 sold: false
 onHold: false
 ---
