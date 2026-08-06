@@ -4,11 +4,11 @@ price: 50
 date: 2026-07-10T00:37:26.512Z
 draft: false
 categories: ["Electronics"]
+weight: 2
 referenceUrl: ""
 videoUrl: ""
 availableFrom: ""
-weight: 2
-sold: false
+sold: true
 onHold: false
 ---
 90° Oscillating Standing Fans with 26ft/s Velocity, Quiet 25dB, Bladeless Cooling Fan for Office, 12 Speeds, 4 Modes, 12H Timer, LED Display

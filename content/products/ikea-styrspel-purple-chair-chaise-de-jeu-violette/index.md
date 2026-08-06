@@ -5,10 +5,11 @@ date: 2026-06-16T15:45:49.074Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.ikea.com/ca/en/p/styrspel-gaming-chair-dark-gray-gray-50522035/"
+videoUrl: ""
 availableFrom: "2026-08-20"
 weight: 7
 sold: false
-onHold: false
+onHold: true
 ---
 **English**
 
