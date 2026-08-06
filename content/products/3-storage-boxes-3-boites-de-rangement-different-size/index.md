@@ -8,7 +8,7 @@ referenceUrl: "https://www.ikea.com/ca/en/p/sockerbit-storage-box-with-lid-white
 videoUrl: ""
 availableFrom: ""
 weight: 15
-sold: false
+sold: true
 onHold: false
 ---
 SOCKERBIT  Storage box with lid, white, 

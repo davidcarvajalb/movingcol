@@ -8,7 +8,7 @@ referenceUrl: ""
 videoUrl: ""
 availableFrom: "2026-08-24"
 weight: 11
-sold: false
+sold: true
 onHold: false
 ---
 A sleek and functional black matte floor lamp featuring two independently adjustable spotlight heads. It features a sturdy circular base and an easy-access power cord.

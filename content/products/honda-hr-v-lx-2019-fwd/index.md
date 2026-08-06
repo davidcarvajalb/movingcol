@@ -4,12 +4,12 @@ price: 17500
 date: 2026-07-30T20:27:13.618Z
 draft: false
 categories: ["Cars"]
+weight: 1
 referenceUrl: "https://www.honda.ca/Content/honda.ca/569d91a1-7a68-4712-8f7f-ea74c0b1d6ff/ModelPage_Downloads/HON20159_02_19MY_HR-V_specs_header_EN.pdf"
 videoUrl: "https://www.youtube.com/shorts/I5iOJB83gJo"
 availableFrom: ""
-weight: 1
 sold: false
-onHold: false
+onHold: true
 ---
 **English**
 

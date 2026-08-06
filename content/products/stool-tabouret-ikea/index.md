@@ -8,7 +8,7 @@ referenceUrl: "https://www.ikea.com/ca/en/p/kyrre-stool-birch-60416925/"
 videoUrl: ""
 availableFrom: ""
 weight: 16
-sold: false
+sold: true
 onHold: false
 ---
 Seat:

@@ -8,7 +8,7 @@ referenceUrl: ""
 videoUrl: ""
 availableFrom: ""
 weight: 24
-sold: false
+sold: true
 onHold: false
 ---
 50 LEDs per set, 8 different functions, color-changing (Warm White or Multicolor).

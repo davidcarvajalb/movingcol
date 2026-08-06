@@ -6,7 +6,7 @@ draft: false
 categories: ["Electronics"]
 referenceUrl: "https://www.gigabyte.com/Monitor/M32U"
 videoUrl: ""
-availableFrom: "2026-08-15"
+availableFrom: ""
 weight: 3
 sold: false
 onHold: false
