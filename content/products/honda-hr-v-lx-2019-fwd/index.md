@@ -8,8 +8,8 @@ weight: 1
 referenceUrl: "https://www.honda.ca/Content/honda.ca/569d91a1-7a68-4712-8f7f-ea74c0b1d6ff/ModelPage_Downloads/HON20159_02_19MY_HR-V_specs_header_EN.pdf"
 videoUrl: "https://www.youtube.com/shorts/I5iOJB83gJo"
 availableFrom: ""
-sold: false
-onHold: true
+sold: true
+onHold: false
 ---
 **English**
 
