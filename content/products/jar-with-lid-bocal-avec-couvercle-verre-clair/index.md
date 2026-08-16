@@ -4,11 +4,11 @@ price: 2
 date: 2026-08-04T17:31:49.952Z
 draft: false
 categories: ["Kitchen", "Storage"]
+weight: 15
 referenceUrl: "https://www.ikea.com/ca/en/p/korken-jar-with-lid-clear-glass-70227986/"
 videoUrl: ""
 availableFrom: ""
-weight: 15
-sold: false
+sold: true
 onHold: false
 ---
 KORKEN series is ideal for preserving pickles and jams, serving beverages or keeping your cookies crunchy. The airtight seal locks in all the goodness.

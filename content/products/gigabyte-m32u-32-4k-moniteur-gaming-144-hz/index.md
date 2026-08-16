@@ -4,11 +4,11 @@ price: 400
 date: 2026-06-17T00:36:16.010Z
 draft: false
 categories: ["Electronics"]
+weight: 3
 referenceUrl: "https://www.gigabyte.com/Monitor/M32U"
 videoUrl: ""
 availableFrom: ""
-weight: 3
-sold: false
+sold: true
 onHold: false
 ---
 **English**

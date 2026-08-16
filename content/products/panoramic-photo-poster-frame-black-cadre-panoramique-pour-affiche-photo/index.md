@@ -4,11 +4,11 @@ price: 5
 date: 2026-07-07T14:30:20.394Z
 draft: false
 categories: ["Decor"]
+weight: 22
 referenceUrl: ""
 videoUrl: ""
 availableFrom: ""
-weight: 22
-sold: false
+sold: true
 onHold: false
 ---
 Sleek and modern black panoramic frame, perfect for posters, art prints, landscapes, or photo collages.
