@@ -1,12 +1,12 @@
 ---
 title: "Table "
-price: 70
+price: 50
 date: 2026-06-16T16:49:33.148Z
 draft: false
 categories: ["Furniture"]
 referenceUrl: "https://www.jysk.ca/jegind-dining-table.html"
 videoUrl: ""
-availableFrom: "2026-08-20"
+availableFrom: ""
 weight: 8
 sold: false
 onHold: false

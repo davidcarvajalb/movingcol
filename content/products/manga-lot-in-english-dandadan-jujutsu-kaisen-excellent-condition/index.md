@@ -4,11 +4,11 @@ price: 10
 date: 2026-06-23T00:34:50.814Z
 draft: false
 categories: ["Book"]
+weight: 12
 referenceUrl: ""
 videoUrl: ""
 availableFrom: ""
-weight: 12
-sold: false
+sold: true
 onHold: false
 ---
 Selling a lot of 4 manga volumes in English. They are all in excellent condition, like new, and have been read only once.

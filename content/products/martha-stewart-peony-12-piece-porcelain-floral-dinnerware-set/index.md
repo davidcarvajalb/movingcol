@@ -1,6 +1,6 @@
 ---
 title: "Martha Stewart Peony 12 Piece Porcelain Floral Dinnerware Set"
-price: 15
+price: 10
 date: 2026-06-16T17:04:14.504Z
 draft: false
 categories: ["Kitchen"]

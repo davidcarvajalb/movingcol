@@ -1,6 +1,6 @@
 ---
 title: "Christmas tree / Sapin de Noël"
-price: 30
+price: 20
 date: 2026-06-26T18:08:48.399Z
 draft: false
 categories: ["Decor", "christmas"]
