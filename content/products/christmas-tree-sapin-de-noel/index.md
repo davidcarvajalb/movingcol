@@ -4,11 +4,11 @@ price: 20
 date: 2026-06-26T18:08:48.399Z
 draft: false
 categories: ["Decor", "christmas"]
+weight: 27
 referenceUrl: ""
 videoUrl: ""
 availableFrom: ""
-weight: 27
-sold: false
+sold: true
 onHold: false
 ---
 Beautiful artificial Christmas tree from "National Tree Company". It features a slim design, making it perfect for apartments or smaller spaces without taking up too much room.

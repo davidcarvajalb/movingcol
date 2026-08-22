@@ -4,11 +4,11 @@ price: 20
 date: 2026-06-15T17:23:42.647Z
 draft: false
 categories: ["Furniture"]
+weight: 34
 referenceUrl: ""
 videoUrl: ""
 availableFrom: ""
-weight: 34
-sold: false
+sold: true
 onHold: false
 ---
 A pair of upholstered dining or accent chairs in a vibrant turquoise blue fabric. 
